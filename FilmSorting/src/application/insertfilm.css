@@ -1,0 +1,148 @@
+/*InsertFilm klassen*/
+.root{
+	-fx-background-color: #8c0000;
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.button {
+	-fx-background-image: url(tvdstripe.jpg);
+	-fx-background-size: stretch;
+	-fx-border-color: #d60808;
+	-fx-font-size: 40.0;
+	-fx-font-family: 'Vladimir Script';
+	-fx-min-height: 150.0;
+	-fx-min-width: 350.0;
+	-fx-max-height: 500;
+	-fx-max-width: 500;
+	-fx-text-fill: #ffe7c1;
+}
+#indsetNavnLabel{
+	-fx-text-fill: #ffe7c1;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 40.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500; 
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetNameLabel{
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 40.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500; 
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetAarstalLabel{
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 40.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500; 
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetSprogLabel{
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 40.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500; 
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetUndertekstLabel{
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 40.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500; 
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetNavnTekstfelt{
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500;
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetNameTekstfelt{
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500; 
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetAarstalTekstfelt{
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500;
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetSprogTekstfelt{
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500;
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetUndertekstTekstfelt{
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500;
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}

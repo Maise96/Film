@@ -1,0 +1,97 @@
+/*InsertFilm klassen*/
+.root{
+	-fx-background-image: url(tvdstripe.jpg);
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.button {
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10px;
+	-fx-font-size: 40.0;
+	-fx-font-family: 'Vladimir Script';
+	-fx-min-height: 100.0;
+	-fx-min-width: 300.0;
+	-fx-text-fill: #ffe7c1;
+}
+#indsetNavnLabel{
+	-fx-text-fill: #ffe7c1;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 40.0;
+}
+#indsetNameLabel{
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 40.0;
+}
+#indsetAarstalLabel{
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10px;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 40.0;
+}
+#indsetSeasonLabel{
+	
+}
+#indsetTilfojKnap{
+	-fx-min-height: 100.0;
+	-fx-min-width: 300.0;
+}
+#indsetTilbageKnap{
+	-fx-min-height: 100.0;
+	-fx-min-width: 300.0;
+}
+#indsetNavnTekstfelt{
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500;
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetNameTekstfelt{
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500; 
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetAarstalTekstfelt{
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
+	-fx-border-color: #d60808;
+	-fx-border-radius: 10;
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 300.0;
+	-fx-max-width: 500;
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#indsetSeasonTekstfelt{
+	
+}
