@@ -16,8 +16,8 @@ public class FilmMenu {
 		
 		Button filmMenuSogFilm = new Button("Søg efter Film");
 		filmMenuSogFilm.setOnAction(e -> {
-			Search search = new Search();
-			search.start(new Stage());
+			SearchFilm searchFilm = new SearchFilm();
+			searchFilm.start(new Stage());
 			filmMenu.close();
 		});
 		Button filmMenuTilfojFilm = new Button("Tilføj en Film");

@@ -19,7 +19,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import logic.FilmSortImpl;
 
-public class Search {
+public class SearchFilm {
 
 	List<DomainClass> filmliste;
 	private ObservableList<DomainClass> observableListSogFilm;
@@ -81,11 +81,15 @@ public class Search {
 		name.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("name"));
 		TableColumn<DomainClass, String> aarstal = new TableColumn<DomainClass, String>("Årstal");
 		aarstal.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("aarstal"));
-
-		table.getColumns().addAll(ref, aarstal, navn, name);
+		TableColumn<DomainClass, String> audio = new TableColumn<DomainClass, String>("Sprog");
+		audio.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("audio"));
+		TableColumn<DomainClass, String> sub = new TableColumn<DomainClass, String>("Undertekster");
+		sub.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("sub"));
+		
+		table.getColumns().addAll(ref,navn, name, aarstal, audio, sub);
 
 		Scene scene = new Scene(border, 1000, 650);
-		scene.getStylesheets().add(Main.class.getResource("search.css").toExternalForm());
+		scene.getStylesheets().add(Main.class.getResource("searchFilm.css").toExternalForm());
 		sogFilm.setScene(scene);
 		sogFilm.show();
 	}

@@ -1,19 +1,17 @@
 /*Search klassen */
 .root{
-	-fx-background-image: url(tvd.jpg);
-	-fx-background-repeat: no-repeat;
-	-fx-background-size: cover;
+	-fx-background-color: #01114c;
 }
 .button {
-	-fx-background-color: #01114c;
-	-fx-background-radius: 10;
+	-fx-background-image: url(tvdo.jpg);
+	-fx-background-size: stretch;
 	-fx-border-color: #0040a8;
-	-fx-border-radius: 10px;
+	-fx-border-radius: 5px;
 	-fx-font-size: 40.0;
 	-fx-font-family: 'Vladimir Script';
 	-fx-min-height: 100.0;
 	-fx-min-width: 300.0;
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #000000;
 }
 #sogLabel{
 	-fx-text-fill: #ffe7c1;
@@ -22,11 +20,11 @@
 }
 #sogTextField{
 	-fx-background-color: #ffe7c1;
-	-fx-text-fill: #01114c;
+	-fx-text-fill: #000000;
 	-fx-font-family:'Segoe Script';
 	-fx-font-size: 30.0;
 	-fx-min-width: 400.0;
 	-fx-max-width: 500; 
-	-fx-min-height: 45.0;
-	-fx-max-height: 55;
+	-fx-min-height: 60.0;
+	-fx-max-height: 80;
 }

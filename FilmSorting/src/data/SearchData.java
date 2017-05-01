@@ -30,6 +30,8 @@ public class SearchData {
 					sog.setNavn(resultset.getString("navn"));
 					sog.setName(resultset.getString("name"));
 					sog.setAarstal(resultset.getString("aarstal"));
+					sog.setAudio(resultset.getString("audio"));
+					sog.setSub(resultset.getString("sub"));
 					list.add(sog);
 					System.out.println("igennem while");
 				}

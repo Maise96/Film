@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Program {
 
 	public void start(Stage program) {
-		program.setTitle("Liste Over Film");
+		program.setTitle("Liste Over Film og Serier");
 		program.setResizable(false);
 		BorderPane border = new BorderPane();
 		border.setId("border");
