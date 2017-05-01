@@ -41,7 +41,7 @@ public class FilmMenu {
 
 
 		VBox vboxKnapper = new VBox();
-		vboxKnapper.setPadding(new Insets(160,0,0,300)); // top, right, bottom, left 
+		vboxKnapper.setPadding(new Insets(100,0,0,300)); // top, right, bottom, left 
 		vboxKnapper.getChildren().addAll(filmMenuSogFilm, filmMenuTilfojFilm, filmMenuAendringer, filmTilbageKnap);
 		vboxKnapper.setSpacing(20);
 		border.setCenter(vboxKnapper);
