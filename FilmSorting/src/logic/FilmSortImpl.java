@@ -2,29 +2,30 @@ package logic;
 
 import java.util.List;
 
-import data.InsertData;
+import data.InsertDataFilm;
 import data.SearchData;
 import data.SearchSData;
-import domain.DomainClass;
+import domain.DomainClassFilm;
+import domain.DomainClassSeries;
 
 public class FilmSortImpl implements FilmSortInterface {
 	private SearchData sd = new SearchData();
-	private InsertData tf = new InsertData();
+	private InsertDataFilm tf = new InsertDataFilm();
 	private SearchSData ssd = new SearchSData();
 
 	@Override
-	public List<DomainClass> sogFilmListe(DomainClass soeg) {
-		return sd.sogFilmListe(soeg);
+	public List<DomainClassFilm> sogFilmListe(String sogeord) {
+		return sd.sogFilmListe(sogeord);
 	}
 
 	@Override
-	public DomainClass tilfojFilm(DomainClass domain) {
+	public DomainClassFilm tilfojFilm(DomainClassFilm domain) {
 		tf.opretEnFilm(domain);
 			return domain;
 	}
 	
 	@Override
-	public List<DomainClass> sogSeriesListe(DomainClass soog) {
+	public List<DomainClassSeries> sogSeriesListe(DomainClassSeries soog) {
 		return ssd.sogSeriesListe(soog);
 	}
 }

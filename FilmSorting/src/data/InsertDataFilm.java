@@ -3,14 +3,11 @@ package data;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import domain.DomainClass;
+import domain.DomainClassFilm;
 
-public class InsertData {
-	public boolean tilfojFilm(DomainClass domain){
-		return false;
-	}
+public class InsertDataFilm {
 	
-	public DomainClass opretEnFilm (DomainClass domain){
+	public DomainClassFilm opretEnFilm (DomainClassFilm domain){
 		try (DataAccess access = new DataAccess()){
 			try {
 				opretEnFilm(access, domain);
@@ -23,20 +20,20 @@ public class InsertData {
 		return domain;
 	}
 
-	public DomainClass opretEnFilm(DataAccess dataAccess, DomainClass domainClass) {
+	public DomainClassFilm opretEnFilm(DataAccess dataAccess, DomainClassFilm domainClassFilm) {
 		try (PreparedStatement statement = dataAccess.getConnection().prepareStatement(
 				"INSERT INTO film (navn, name, aarstal, audio, sub) VALUES (?, ?, ?, ?, ?)")){
-			statement.setString(1, domainClass.getNavn());
-			statement.setString(2, domainClass.getName());
-			statement.setString(3, domainClass.getAarstal());
-			statement.setString(4, domainClass.getAudio());
-			statement.setString(5, domainClass.getSub());
+			statement.setString(1, domainClassFilm.getNavn());
+			statement.setString(2, domainClassFilm.getName());
+			statement.setString(3, domainClassFilm.getAarstal());
+			statement.setString(4, domainClassFilm.getAudio());
+			statement.setString(5, domainClassFilm.getSub());
 			int antal = statement.executeUpdate();
 			System.out.println("Antal rækker berørt: " + antal + " Film tilføjet");
 			
 		}catch (SQLException e){
 			throw new RuntimeException("Noget gik galt RuntimeException", e);
 		}
-		return domainClass;
+		return domainClassFilm;
 	}
 }

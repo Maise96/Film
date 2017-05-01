@@ -2,10 +2,11 @@ package logic;
 
 import java.util.List;
 
-import domain.DomainClass;
+import domain.DomainClassFilm;
+import domain.DomainClassSeries;
 
 public interface FilmSortInterface {
-	public List<DomainClass> sogFilmListe(DomainClass soeg);
-	public DomainClass tilfojFilm(DomainClass domain);
-	List<DomainClass> sogSeriesListe(DomainClass soog);
+	public DomainClassFilm tilfojFilm(DomainClassFilm domain);
+	List<DomainClassSeries> sogSeriesListe(DomainClassSeries soog);
+	List<DomainClassFilm> sogFilmListe(String sogeord);
 }

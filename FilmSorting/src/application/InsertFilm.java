@@ -1,6 +1,6 @@
 package application;
 
-import domain.DomainClass;
+import domain.DomainClassFilm;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -60,7 +60,7 @@ public class InsertFilm {
 		indsetTilfojKnap.setOnAction(e -> {
 			try {
 				FilmSortInterface fsi = new FilmSortImpl();
-				DomainClass sdomain = new DomainClass();
+				DomainClassFilm sdomain = new DomainClassFilm();
 				sdomain.setNavn(indsetNavnTekstfelt.getText());
 				sdomain.setName(indsetNameTekstfelt.getText());
 				sdomain.setAarstal(indsetAarstalTekstfelt.getText());

@@ -2,7 +2,7 @@ package application;
 
 import java.util.List;
 
-import domain.DomainClass;
+import domain.DomainClassFilm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -21,9 +21,9 @@ import logic.FilmSortImpl;
 
 public class SearchFilm {
 
-	List<DomainClass> filmliste;
-	private ObservableList<DomainClass> observableListSogFilm;
-	TableView<DomainClass> table = new TableView<DomainClass>();
+	List<DomainClassFilm> filmliste;
+	private ObservableList<DomainClassFilm> observableListSogFilm;
+	TableView<DomainClassFilm> table = new TableView<DomainClassFilm>();
 
 	public void start(Stage sogFilm) {
 		sogFilm.setTitle("Søg efter film");
@@ -46,13 +46,10 @@ public class SearchFilm {
 
 		Button sogSogknap = new Button("Søg");
 		sogSogknap.setOnAction(e -> {
-			DomainClass sogeFunkNavnName = new DomainClass();
-			sogeFunkNavnName.setNavn(sogTextField.getText());
-			sogeFunkNavnName.setName(sogTextField.getText());
-			sogeFunkNavnName.setAarstal(sogTextField.getText());
+			String sogeord = sogTextField.getText();
 
 			FilmSortImpl logicSog = new FilmSortImpl();
-			filmliste = logicSog.sogFilmListe(sogeFunkNavnName);
+			filmliste = logicSog.sogFilmListe(sogeord);
 
 			observableListSogFilm = FXCollections.observableArrayList(filmliste);
 			table.setItems(observableListSogFilm);
@@ -73,18 +70,18 @@ public class SearchFilm {
 		border.setBottom(knapperhbox);
 
 		border.setCenter(table);
-		TableColumn<DomainClass, String> ref = new TableColumn<DomainClass, String>("Nr.");
-		ref.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("ref"));
-		TableColumn<DomainClass, String> navn = new TableColumn<DomainClass, String>("Dansk Titel");
-		navn.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("navn"));
-		TableColumn<DomainClass, String> name = new TableColumn<DomainClass, String>("Engelsk Titel");
-		name.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("name"));
-		TableColumn<DomainClass, String> aarstal = new TableColumn<DomainClass, String>("Årstal");
-		aarstal.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("aarstal"));
-		TableColumn<DomainClass, String> audio = new TableColumn<DomainClass, String>("Sprog");
-		audio.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("audio"));
-		TableColumn<DomainClass, String> sub = new TableColumn<DomainClass, String>("Undertekster");
-		sub.setCellValueFactory(new PropertyValueFactory<DomainClass, String>("sub"));
+		TableColumn<DomainClassFilm, String> ref = new TableColumn<DomainClassFilm, String>("Nr.");
+		ref.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("ref"));
+		TableColumn<DomainClassFilm, String> navn = new TableColumn<DomainClassFilm, String>("Dansk Titel");
+		navn.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("navn"));
+		TableColumn<DomainClassFilm, String> name = new TableColumn<DomainClassFilm, String>("Engelsk Titel");
+		name.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("name"));
+		TableColumn<DomainClassFilm, String> aarstal = new TableColumn<DomainClassFilm, String>("Årstal");
+		aarstal.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("aarstal"));
+		TableColumn<DomainClassFilm, String> audio = new TableColumn<DomainClassFilm, String>("Sprog");
+		audio.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("audio"));
+		TableColumn<DomainClassFilm, String> sub = new TableColumn<DomainClassFilm, String>("Undertekster");
+		sub.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("sub"));
 		
 		table.getColumns().addAll(ref,navn, name, aarstal, audio, sub);
 
