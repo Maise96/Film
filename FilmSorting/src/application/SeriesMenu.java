@@ -11,9 +11,9 @@ public class SeriesMenu {
 	public void start(Stage seriesMenu) {
 		seriesMenu.setTitle("Serier Menu");
 		seriesMenu.setResizable(false);
-		
+
 		BorderPane border = new BorderPane();
-		
+
 		Button seriesMenuSogSeries = new Button("Søg efter en Serie");
 		seriesMenuSogSeries.setOnAction(e -> {
 			SearchSeries searchSeries = new SearchSeries();
@@ -30,7 +30,7 @@ public class SeriesMenu {
 		seriesMenuAendringer.setOnAction(e -> {
 			seriesMenu.close();
 		});
-		
+
 		Button seriesMenuTilbageKnap = new Button("Tilbage");
 		seriesMenuTilbageKnap.setId("indsetTilbageKnap");
 		seriesMenuTilbageKnap.setOnAction(e -> {
@@ -39,17 +39,17 @@ public class SeriesMenu {
 			seriesMenu.close();
 		});
 
-
 		VBox vboxKnapper = new VBox();
-		vboxKnapper.setPadding(new Insets(160,0,0,300)); // top, right, bottom, left 
-		vboxKnapper.getChildren().addAll(seriesMenuSogSeries, seriesMenuTilfojSerie, seriesMenuAendringer, seriesMenuTilbageKnap);
+		vboxKnapper.setPadding(new Insets(100, 0, 0, 300)); // top, right,
+															// bottom, left
+		vboxKnapper.getChildren().addAll(seriesMenuSogSeries, seriesMenuTilfojSerie, seriesMenuAendringer,
+				seriesMenuTilbageKnap);
 		vboxKnapper.setSpacing(20);
 		border.setCenter(vboxKnapper);
 
-		
 		Scene scene = new Scene(border, 1000, 650);
-				scene.getStylesheets().add(Main.class.getResource("seriesMenu.css").toExternalForm());
-				seriesMenu.setScene(scene);
-				seriesMenu.show();
-		}
+		scene.getStylesheets().add(Main.class.getResource("seriesMenu.css").toExternalForm());
+		seriesMenu.setScene(scene);
+		seriesMenu.show();
+	}
 }

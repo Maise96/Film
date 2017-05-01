@@ -40,10 +40,6 @@ public class SearchFilm {
 		vbox.getChildren().addAll(sogLabel, sogTextField);
 		border.setRight(vbox);
 
-		/*
-		 * Action buttons som søger i databasen efter whatever man søger på
-		 */
-
 		Button sogSogknap = new Button("Søg");
 		sogSogknap.setOnAction(e -> {
 			String sogeord = sogTextField.getText();
@@ -70,6 +66,7 @@ public class SearchFilm {
 		border.setBottom(knapperhbox);
 
 		border.setCenter(table);
+
 		TableColumn<DomainClassFilm, String> ref = new TableColumn<DomainClassFilm, String>("Nr.");
 		ref.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("ref"));
 		TableColumn<DomainClassFilm, String> navn = new TableColumn<DomainClassFilm, String>("Dansk Titel");
@@ -82,8 +79,8 @@ public class SearchFilm {
 		audio.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("audio"));
 		TableColumn<DomainClassFilm, String> sub = new TableColumn<DomainClassFilm, String>("Undertekster");
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("sub"));
-		
-		table.getColumns().addAll(ref,navn, name, aarstal, audio, sub);
+
+		table.getColumns().addAll(ref, navn, name, aarstal, audio, sub);
 
 		Scene scene = new Scene(border, 1000, 650);
 		scene.getStylesheets().add(Main.class.getResource("searchFilm.css").toExternalForm());
