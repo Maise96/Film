@@ -7,6 +7,6 @@ import domain.DomainClassSeries;
 
 public interface FilmSortInterface {
 	public DomainClassFilm tilfojFilm(DomainClassFilm domain);
-	List<DomainClassSeries> sogSeriesListe(DomainClassSeries soog);
+	List<DomainClassSeries> sogSeriesListe(String soog);
 	List<DomainClassFilm> sogFilmListe(String sogeord);
 }

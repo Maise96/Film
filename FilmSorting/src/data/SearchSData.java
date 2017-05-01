@@ -1,41 +1,51 @@
 package data;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import domain.DomainClass;
+import domain.DomainClassSeries;
 
 public class SearchSData {
-	public List<DomainClass> sogSeriesListe( DomainClass soog) {
-		List<DomainClass> list = new ArrayList<>();
-		try (Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/film", "SA", "");
-				PreparedStatement statement = connection.prepareStatement(
-				"SELECT * FROM serie WHERE upper(navn) LIKE ? OR upper(name) LIKE ?");) {
 
-			statement.setString(1, "%" + soog.getNavn().toUpperCase() + "%");
-			statement.setString(2, "%" + soog.getName().toUpperCase() + "%");
+	public List<DomainClassSeries> sogSeriesListe(String soog) {
+		List<DomainClassSeries> list = new ArrayList<>();
+		try (DataAccess access = new DataAccess()) {
+			try {
+				sogSeriesListe(access, list, soog);
+				access.commit();
+			} catch (Exception e) {
+				access.rollback();
+				throw e;
+			}
+		}
+		return list;
+	}
+
+	public List<DomainClassSeries> sogSeriesListe(DataAccess dataAccess, List<DomainClassSeries> list, String soog) {
+		try (PreparedStatement statement = dataAccess.getConnection()
+				.prepareStatement("SELECT * FROM serie WHERE upper(navn) LIKE ? OR upper(name) LIKE ?");) {
+
+			statement.setString(1, "%" + soog.toUpperCase() + "%");
+			statement.setString(2, "%" + soog.toUpperCase() + "%");
 
 			try (ResultSet resultset = statement.executeQuery();) {
 
 				while (resultset.next()) {
-					DomainClass sog = new DomainClass();
+					DomainClassSeries sog = new DomainClassSeries();
 					sog.setRefs(resultset.getInt("refs"));
-					sog.setNavns(resultset.getString("navn"));
-					sog.setNames(resultset.getString("name"));
+					sog.setNavn(resultset.getString("navn"));
+					sog.setName(resultset.getString("name"));
 					sog.setSeason(resultset.getString("season"));
-					sog.setAarstals(resultset.getString("aarstal"));
+					sog.setAarstal(resultset.getString("aarstal"));
 					list.add(sog);
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
+		}
 		return list;
 	}
-
 }

@@ -25,7 +25,7 @@ public class FilmSortImpl implements FilmSortInterface {
 	}
 	
 	@Override
-	public List<DomainClassSeries> sogSeriesListe(DomainClassSeries soog) {
+	public List<DomainClassSeries> sogSeriesListe(String soog) {
 		return ssd.sogSeriesListe(soog);
 	}
 }
