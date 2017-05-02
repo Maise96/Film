@@ -19,22 +19,22 @@ public class InsertFilm {
 		insertFilm.setResizable(false);
 		BorderPane border = new BorderPane();
 
-		Label indsetNavnLabel = new Label("Tilføj Danske Titel: ");
-		Label indsetNameLabel = new Label("Tilføj Engelske Titel: ");
-		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår: ");
-		Label indsetAudioLabel = new Label("Tilføj Audio Sprog: ");
-		Label indsetSubLabel = new Label("Tilføj Undertekst Sprog: ");
+		Label indsetNavnLabel = new Label("Tilføj Danske Titel       :");
+		Label indsetNameLabel = new Label("Tilføj Engelske Titel     :");
+		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår        :");
+		Label indsetAudioLabel = new Label("Tilføj Audio Sprog       :");
+		Label indsetSubLabel = new Label("Tilføj Undertekst Sprog :");
 		indsetNavnLabel.setId("indsetNavnLabel");
 		indsetNameLabel.setId("indsetNameLabel");
 		indsetAarstalLabel.setId("indsetAarstalLabel");
 		indsetAudioLabel.setId("indsetSprogLabel");
 		indsetSubLabel.setId("indsetUndertekstLabel");
-		
+
 		Label sprogsublabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
 		Label subsproglabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
 		sprogsublabel.setId("sprogsublabel");
 		subsproglabel.setId("subsproglabel");
-		
+
 		TextField indsetNavnTekstfelt = new TextField();
 		TextField indsetNameTekstfelt = new TextField();
 		TextField indsetAarstalTekstfelt = new TextField();
@@ -45,18 +45,19 @@ public class InsertFilm {
 		indsetAarstalTekstfelt.setId("indsetAarstalTekstfelt");
 		indsetAudioTekstfelt.setId("indsetSprogTekstfelt");
 		indsetSubTekstfelt.setId("indsetUndertekstTekstfelt");
-		
+
 		VBox indsetLabelVBox = new VBox();
-		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel, sprogsublabel, indsetAudioLabel, indsetSubLabel);
-		indsetLabelVBox.setSpacing(15);
-		border.setLeft(indsetLabelVBox);
+		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel, sprogsublabel,
+				indsetAudioLabel, indsetSubLabel);
+		indsetLabelVBox.setSpacing(10);
 		VBox indsetTextFieldVBox = new VBox();
-		indsetTextFieldVBox.getChildren().addAll(indsetNavnTekstfelt, indsetNameTekstfelt, indsetAarstalTekstfelt, subsproglabel, indsetAudioTekstfelt, indsetSubTekstfelt);
-		indsetTextFieldVBox.setSpacing(15);
+		indsetTextFieldVBox.getChildren().addAll(indsetNavnTekstfelt, indsetNameTekstfelt, indsetAarstalTekstfelt,
+				subsproglabel, indsetAudioTekstfelt, indsetSubTekstfelt);
+		indsetTextFieldVBox.setSpacing(10);
+		border.setLeft(indsetLabelVBox);
 		border.setRight(indsetTextFieldVBox);
-		
+
 		Button indsetTilfojKnap = new Button("Tilføj");
-		indsetTilfojKnap.setId("indsetTilfojKnap");
 		indsetTilfojKnap.setOnAction(e -> {
 			try {
 				FilmSortInterface fsi = new FilmSortImpl();
@@ -72,7 +73,6 @@ public class InsertFilm {
 			}
 		});
 		Button indsetTilbageKnap = new Button("Tilbage");
-		indsetTilbageKnap.setId("indsetTilbageKnap");
 		indsetTilbageKnap.setOnAction(e -> {
 			FilmMenu filmMenu = new FilmMenu();
 			filmMenu.start(new Stage());
