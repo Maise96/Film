@@ -39,9 +39,8 @@ public class SeriesMenu {
 			seriesMenu.close();
 		});
 
-		VBox vboxKnapper = new VBox();
-		vboxKnapper.setPadding(new Insets(100, 0, 0, 300)); // top, right,
-															// bottom, left
+		VBox vboxKnapper = new VBox(); // top, right, bottom, left
+		vboxKnapper.setPadding(new Insets(100, 0, 0, 300));
 		vboxKnapper.getChildren().addAll(seriesMenuSogSeries, seriesMenuTilfojSerie, seriesMenuAendringer,
 				seriesMenuTilbageKnap);
 		vboxKnapper.setSpacing(20);

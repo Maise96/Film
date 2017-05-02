@@ -11,9 +11,9 @@ public class FilmMenu {
 	public void start(Stage filmMenu) {
 		filmMenu.setTitle("Film Menu");
 		filmMenu.setResizable(false);
-		
+
 		BorderPane border = new BorderPane();
-		
+
 		Button filmMenuSogFilm = new Button("Søg efter Film");
 		filmMenuSogFilm.setOnAction(e -> {
 			SearchFilm searchFilm = new SearchFilm();
@@ -30,7 +30,7 @@ public class FilmMenu {
 		filmMenuAendringer.setOnAction(e -> {
 			filmMenu.close();
 		});
-		
+
 		Button filmTilbageKnap = new Button("Tilbage");
 		filmTilbageKnap.setId("indsetTilbageKnap");
 		filmTilbageKnap.setOnAction(e -> {
@@ -39,16 +39,15 @@ public class FilmMenu {
 			filmMenu.close();
 		});
 
-
-		VBox vboxKnapper = new VBox();
-		vboxKnapper.setPadding(new Insets(100,0,0,300)); // top, right, bottom, left 
+		VBox vboxKnapper = new VBox(); // top, right, bottom, left
+		vboxKnapper.setPadding(new Insets(100, 0, 0, 300));
 		vboxKnapper.getChildren().addAll(filmMenuSogFilm, filmMenuTilfojFilm, filmMenuAendringer, filmTilbageKnap);
 		vboxKnapper.setSpacing(20);
 		border.setCenter(vboxKnapper);
-		
+
 		Scene scene = new Scene(border, 1000, 650);
-				scene.getStylesheets().add(Main.class.getResource("filmMenu.css").toExternalForm());
-				filmMenu.setScene(scene);
-				filmMenu.show();
-		}
+		scene.getStylesheets().add(Main.class.getResource("filmMenu.css").toExternalForm());
+		filmMenu.setScene(scene);
+		filmMenu.show();
+	}
 }
