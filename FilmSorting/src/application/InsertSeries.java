@@ -14,7 +14,7 @@ import logic.FilmSortInterface;
 
 public class InsertSeries {
 	public void start(Stage insertSeries) {
-		insertSeries.setTitle("Tilføj En Serie");
+		insertSeries.setTitle("Tilføj en Serie");
 		insertSeries.setResizable(false);
 		BorderPane border = new BorderPane();
 

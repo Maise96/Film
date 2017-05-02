@@ -15,7 +15,7 @@ import logic.FilmSortInterface;
 public class InsertFilm {
 
 	public void start(Stage insertFilm) {
-		insertFilm.setTitle("Tilføj En Film");
+		insertFilm.setTitle("Tilføj en Film");
 		insertFilm.setResizable(false);
 		BorderPane border = new BorderPane();
 

@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class SeriesMenu {
 	public void start(Stage seriesMenu) {
-		seriesMenu.setTitle("Serier Menu");
+		seriesMenu.setTitle("Serie Menu");
 		seriesMenu.setResizable(false);
 
 		BorderPane border = new BorderPane();
