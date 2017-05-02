@@ -27,7 +27,7 @@ public class SearchSeries {
 	TableView<DomainClassSeries> table = new TableView<DomainClassSeries>();
 
 	public void start(Stage searchSeries) {
-		searchSeries.setTitle("Søg efter film");
+		searchSeries.setTitle("Søg efter en Serie");
 		searchSeries.setResizable(false);
 		BorderPane border = new BorderPane();
 
@@ -37,7 +37,7 @@ public class SearchSeries {
 		sogTextField.setId("sogTextField");
 
 		VBox vbox = new VBox();
-		vbox.getChildren().addAll(sogLabel, sogTextField);
+		vbox.getChildren().addAll(sogTextField, sogLabel);
 		border.setRight(vbox);
 
 		Button sogSogknap = new Button("Søg");

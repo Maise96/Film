@@ -26,7 +26,7 @@ public class SearchFilm {
 	TableView<DomainClassFilm> table = new TableView<DomainClassFilm>();
 
 	public void start(Stage sogFilm) {
-		sogFilm.setTitle("Søg efter film");
+		sogFilm.setTitle("Søg efter en film");
 		sogFilm.setResizable(false);
 		BorderPane border = new BorderPane();
 
