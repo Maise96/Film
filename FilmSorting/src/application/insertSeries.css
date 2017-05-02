@@ -1,123 +1,102 @@
 /*InsertFilm klassen*/
 .root{
-	-fx-background-color: #8c0000;
-	-fx-background-image: url(tvd.jpg);
+	-fx-background-image: url(tvdgodt.jpg);
 	-fx-background-size: stretch;
 }
 .button {
-	-fx-background-image: url(tvd.jpg);
-	-fx-background-size: stretch;
+	-fx-background-color: #8c0000;
+	-fx-background-radius: 10;
 	-fx-border-color: #d60808;
-	-fx-border-radius: 5px;
+	-fx-border-radius: 10px;
 	-fx-font-size: 40.0;
 	-fx-font-family: 'Vladimir Script';
-	-fx-min-height: 50.0;
+	-fx-min-height: 100.0;
 	-fx-min-width: 350.0;
-	-fx-max-height: 500;
+	-fx-max-height: 250;
 	-fx-max-width: 500;
 	-fx-text-fill: #ffe7c1;
 }
 #indsetNavnLabel{
-	-fx-text-fill: #ffe7c1;
-	-fx-border-color: #d60808;
-	-fx-border-radius: 10;
-	-fx-background-color: #8c0000;
-	-fx-background-radius: 10px;
+	-fx-text-fill: #d60808;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
-	-fx-min-width: 300.0;
-	-fx-max-width: 500; 
+	-fx-min-width: 350.0;
+	-fx-max-width: 400; 
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
 #indsetNameLabel{
-	-fx-border-color: #d60808;
-	-fx-border-radius: 10;
-	-fx-text-fill: #ffe7c1;
-	-fx-background-color: #8c0000;
-	-fx-background-radius: 10px;
+	-fx-text-fill: #d60808;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
-	-fx-min-width: 300.0;
-	-fx-max-width: 500; 
+	-fx-min-width: 350.0;
+	-fx-max-width: 400; 
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
 #indsetAarstalLabel{
-	-fx-border-color: #d60808;
-	-fx-border-radius: 10;
-	-fx-background-color: #8c0000;
-	-fx-background-radius: 10px;
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #d60808;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
-	-fx-min-width: 300.0;
-	-fx-max-width: 500; 
+	-fx-min-width: 350.0;
+	-fx-max-width: 400; 
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
 #indsetSeasonLabel{
-	-fx-border-color: #d60808;
-	-fx-border-radius: 10;
-	-fx-background-color: #8c0000;
-	-fx-background-radius: 10px;
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #d60808;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
-	-fx-min-width: 300.0;
-	-fx-max-width: 500; 
+	-fx-min-width: 350.0;
+	-fx-max-width: 400; 
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
 #indsetNavnTekstfelt{
-	-fx-background-color: #8c0000;
-	-fx-background-radius: 10;
+	-fx-background-color:transparent;
 	-fx-border-color: #d60808;
 	-fx-border-radius: 10;
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #d60808;
 	-fx-font-family: 'Segoe Script';
-	-fx-font-size: 20.0;
-	-fx-min-width: 300.0;
-	-fx-max-width: 500;
+	-fx-font-size: 30.0;
+	-fx-min-width: 350.0;
+	-fx-max-width: 360;
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
 #indsetNameTekstfelt{
-	-fx-background-color: #8c0000;
-	-fx-background-radius: 10;
+	-fx-background-color:transparent;
 	-fx-border-color: #d60808;
 	-fx-border-radius: 10;
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #d60808;
 	-fx-font-family: 'Segoe Script';
-	-fx-font-size: 20.0;
-	-fx-min-width: 300.0;
-	-fx-max-width: 500; 
+	-fx-font-size: 30.0;
+	-fx-min-width: 350.0;
+	-fx-max-width: 360;
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
 #indsetAarstalTekstfelt{
-	-fx-background-color: #8c0000;
-	-fx-background-radius: 10;
+	-fx-background-color:transparent;
 	-fx-border-color: #d60808;
 	-fx-border-radius: 10;
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #d60808;
 	-fx-font-family: 'Segoe Script';
-	-fx-font-size: 20.0;
-	-fx-min-width: 300.0;
-	-fx-max-width: 500;
+	-fx-font-size: 30.0;
+	-fx-min-width: 350.0;
+	-fx-max-width: 360;
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
 #indsetSeasonTekstfelt{
-		-fx-background-color: #8c0000;
-	-fx-background-radius: 10;
+	-fx-background-color:transparent;
 	-fx-border-color: #d60808;
 	-fx-border-radius: 10;
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #d60808;
 	-fx-font-family: 'Segoe Script';
-	-fx-font-size: 20.0;
-	-fx-min-width: 300.0;
-	-fx-max-width: 500;
+	-fx-font-size: 30.0;
+	-fx-min-width: 350.0;
+	-fx-max-width: 360;
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }

@@ -38,12 +38,12 @@ public class InsertSeries {
 
 		VBox indsetLabelVBox = new VBox();
 		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel, indsetSeasonLabel);
-		indsetLabelVBox.setSpacing(15);
+		indsetLabelVBox.setSpacing(10);
 		border.setLeft(indsetLabelVBox);
 		VBox indsetTextFieldVBox = new VBox();
 		indsetTextFieldVBox.getChildren().addAll(indsetNavnTekstfelt, indsetNameTekstfelt, indsetAarstalTekstfelt,
 				indsetSeasonTekstfelt);
-		indsetTextFieldVBox.setSpacing(15);
+		indsetTextFieldVBox.setSpacing(10);
 		border.setRight(indsetTextFieldVBox);
 
 		Button indsetTilfojKnap = new Button("Tilføj");
