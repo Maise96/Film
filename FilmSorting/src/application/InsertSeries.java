@@ -1,6 +1,6 @@
 package application;
 
-import domain.DomainClassFilm;
+import domain.DomainClassSeries;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -19,56 +19,57 @@ public class InsertSeries {
 		BorderPane border = new BorderPane();
 
 		Label indsetNavnLabel = new Label("Tilføj Danske Titel   : ");
-		indsetNavnLabel.setId("indsetNavnLabel");
-		TextField indsetNavnTekstfelt = new TextField();
-		indsetNavnTekstfelt.setId("indsetNavnTekstfelt");
 		Label indsetNameLabel = new Label("Tilføj Engelske Titel : ");
-		indsetNameLabel.setId("indsetNameLabel");
-		TextField indsetNameTekstfelt = new TextField();
-		indsetNameTekstfelt.setId("indsetNameTekstfelt");
 		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår    : ");
-		indsetAarstalLabel.setId("indsetAarstalLabel");
-		TextField indsetAarstalTekstfelt = new TextField();
-		indsetAarstalTekstfelt.setId("indsetAarstalTekstfelt");
 		Label indsetSeasonLabel = new Label("Tilføj Season/Nr.    : ");
+		indsetNavnLabel.setId("indsetNavnLabel");
+		indsetNameLabel.setId("indsetNameLabel");
+		indsetAarstalLabel.setId("indsetAarstalLabel");
 		indsetSeasonLabel.setId("indsetSeasonLabel");
+
+		TextField indsetNavnTekstfelt = new TextField();
+		TextField indsetNameTekstfelt = new TextField();
+		TextField indsetAarstalTekstfelt = new TextField();
 		TextField indsetSeasonTekstfelt = new TextField();
+		indsetNavnTekstfelt.setId("indsetNavnTekstfelt");
+		indsetNameTekstfelt.setId("indsetNameTekstfelt");
+		indsetAarstalTekstfelt.setId("indsetAarstalTekstfelt");
 		indsetSeasonTekstfelt.setId("indsetSeasonTekstfelt");
-		
+
 		VBox indsetLabelVBox = new VBox();
-		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel);
+		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel, indsetSeasonLabel);
 		indsetLabelVBox.setSpacing(15);
 		border.setLeft(indsetLabelVBox);
 		VBox indsetTextFieldVBox = new VBox();
-		indsetTextFieldVBox.getChildren().addAll(indsetNavnTekstfelt, indsetNameTekstfelt, indsetAarstalTekstfelt);
+		indsetTextFieldVBox.getChildren().addAll(indsetNavnTekstfelt, indsetNameTekstfelt, indsetAarstalTekstfelt,
+				indsetSeasonTekstfelt);
 		indsetTextFieldVBox.setSpacing(15);
 		border.setRight(indsetTextFieldVBox);
 
 		Button indsetTilfojKnap = new Button("Tilføj");
-		indsetTilfojKnap.setId("indsetTilfojKnap");
 		indsetTilfojKnap.setOnAction(e -> {
 			try {
 				FilmSortInterface fsi = new FilmSortImpl();
-				DomainClassFilm sdomain = new DomainClassFilm();
+				DomainClassSeries sdomain = new DomainClassSeries();
 				sdomain.setNavn(indsetNavnTekstfelt.getText());
 				sdomain.setName(indsetNameTekstfelt.getText());
 				sdomain.setAarstal(indsetAarstalTekstfelt.getText());
-				fsi.tilfojFilm(sdomain);
+				sdomain.setSeason(indsetSeasonTekstfelt.getText());
+				fsi.tilfojEnSerie(sdomain);
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
 		});
 		Button indsetTilbageKnap = new Button("Tilbage");
-		indsetTilbageKnap.setId("indsetTilbageKnap");
 		indsetTilbageKnap.setOnAction(e -> {
-			Program program = new Program();
-			program.start(new Stage());
+			SeriesMenu seriesMenu = new SeriesMenu();
+			seriesMenu.start(new Stage());
 			insertSeries.close();
 		});
 
 		HBox indsetKnapperHBox = new HBox();
 		indsetKnapperHBox.getChildren().addAll(indsetTilfojKnap, indsetTilbageKnap);
-		indsetKnapperHBox.setSpacing(410);
+		indsetKnapperHBox.setSpacing(310);
 		border.setBottom(indsetKnapperHBox);
 
 		Scene scene = new Scene(border, 1000, 650);

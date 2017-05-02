@@ -22,8 +22,8 @@ public class SeriesMenu {
 		});
 		Button seriesMenuTilfojSerie = new Button("Tilføj en Serie");
 		seriesMenuTilfojSerie.setOnAction(e -> {
-			InsertFilm insertFilm = new InsertFilm();
-			insertFilm.start(new Stage());
+			InsertSeries insertSeries = new InsertSeries();
+			insertSeries.start(new Stage());
 			seriesMenu.close();
 		});
 		Button seriesMenuAendringer = new Button("Ændrer i en Serie");

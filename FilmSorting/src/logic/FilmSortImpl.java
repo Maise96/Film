@@ -3,6 +3,7 @@ package logic;
 import java.util.List;
 
 import data.InsertDataFilm;
+import data.InsertDataSeries;
 import data.SearchData;
 import data.SearchSData;
 import domain.DomainClassFilm;
@@ -12,6 +13,7 @@ public class FilmSortImpl implements FilmSortInterface {
 	private SearchData sd = new SearchData();
 	private InsertDataFilm tf = new InsertDataFilm();
 	private SearchSData ssd = new SearchSData();
+	private InsertDataSeries ts = new InsertDataSeries();
 
 	@Override
 	public List<DomainClassFilm> sogFilmListe(String sogeord) {
@@ -27,5 +29,11 @@ public class FilmSortImpl implements FilmSortInterface {
 	@Override
 	public List<DomainClassSeries> sogSeriesListe(String soog) {
 		return ssd.sogSeriesListe(soog);
+	}
+	
+	@Override
+	public DomainClassSeries tilfojEnSerie(DomainClassSeries domain){
+		ts.tilfojEnSerie(domain);
+		return domain;
 	}
 }

@@ -9,4 +9,5 @@ public interface FilmSortInterface {
 	public DomainClassFilm tilfojFilm(DomainClassFilm domain);
 	List<DomainClassSeries> sogSeriesListe(String soog);
 	List<DomainClassFilm> sogFilmListe(String sogeord);
+	DomainClassSeries tilfojEnSerie(DomainClassSeries domain);
 }
