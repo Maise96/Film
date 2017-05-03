@@ -16,7 +16,7 @@
 	-fx-max-width: 500;
 	-fx-text-fill: #ffe7c1;
 }
-#indsetNavnLabel{
+.label{
 	-fx-text-fill: #d60808;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
@@ -25,34 +25,7 @@
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
-#indsetNameLabel{
-	-fx-text-fill: #d60808;
-	-fx-font-family: 'Vladimir Script';
-	-fx-font-size: 40.0;
-	-fx-min-width: 350.0;
-	-fx-max-width: 400; 
-	-fx-min-height: 45.0;
-	-fx-max-height: 55;
-}
-#indsetAarstalLabel{
-	-fx-text-fill: #d60808;
-	-fx-font-family: 'Vladimir Script';
-	-fx-font-size: 40.0;
-	-fx-min-width: 350.0;
-	-fx-max-width: 400; 
-	-fx-min-height: 45.0;
-	-fx-max-height: 55;
-}
-#indsetSeasonLabel{
-	-fx-text-fill: #d60808;
-	-fx-font-family: 'Vladimir Script';
-	-fx-font-size: 40.0;
-	-fx-min-width: 350.0;
-	-fx-max-width: 400; 
-	-fx-min-height: 45.0;
-	-fx-max-height: 55;
-}
-#indsetNavnTekstfelt{
+.text-field{
 	-fx-background-color:transparent;
 	-fx-border-color: #d60808;
 	-fx-border-radius: 10;
@@ -64,39 +37,7 @@
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
-#indsetNameTekstfelt{
-	-fx-background-color:transparent;
-	-fx-border-color: #d60808;
-	-fx-border-radius: 10;
-	-fx-text-fill: #d60808;
-	-fx-font-family: 'Segoe Script';
-	-fx-font-size: 30.0;
-	-fx-min-width: 350.0;
-	-fx-max-width: 360;
-	-fx-min-height: 45.0;
-	-fx-max-height: 55;
-}
-#indsetAarstalTekstfelt{
-	-fx-background-color:transparent;
-	-fx-border-color: #d60808;
-	-fx-border-radius: 10;
-	-fx-text-fill: #d60808;
-	-fx-font-family: 'Segoe Script';
-	-fx-font-size: 30.0;
-	-fx-min-width: 350.0;
-	-fx-max-width: 360;
-	-fx-min-height: 45.0;
-	-fx-max-height: 55;
-}
-#indsetSeasonTekstfelt{
-	-fx-background-color:transparent;
-	-fx-border-color: #d60808;
-	-fx-border-radius: 10;
-	-fx-text-fill: #d60808;
-	-fx-font-family: 'Segoe Script';
-	-fx-font-size: 30.0;
-	-fx-min-width: 350.0;
-	-fx-max-width: 360;
-	-fx-min-height: 45.0;
-	-fx-max-height: 55;
+.text-field:focused{
+	-fx-background-color: #bac2fc;
+	-fx-background-radius: 10;
 }

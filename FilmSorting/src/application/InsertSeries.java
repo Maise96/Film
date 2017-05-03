@@ -22,19 +22,11 @@ public class InsertSeries {
 		Label indsetNameLabel = new Label("Tilføj Engelske Titel : ");
 		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår    : ");
 		Label indsetSeasonLabel = new Label("Tilføj Season/Nr.    : ");
-		indsetNavnLabel.setId("indsetNavnLabel");
-		indsetNameLabel.setId("indsetNameLabel");
-		indsetAarstalLabel.setId("indsetAarstalLabel");
-		indsetSeasonLabel.setId("indsetSeasonLabel");
 
 		TextField indsetNavnTekstfelt = new TextField();
 		TextField indsetNameTekstfelt = new TextField();
 		TextField indsetAarstalTekstfelt = new TextField();
 		TextField indsetSeasonTekstfelt = new TextField();
-		indsetNavnTekstfelt.setId("indsetNavnTekstfelt");
-		indsetNameTekstfelt.setId("indsetNameTekstfelt");
-		indsetAarstalTekstfelt.setId("indsetAarstalTekstfelt");
-		indsetSeasonTekstfelt.setId("indsetSeasonTekstfelt");
 
 		VBox indsetLabelVBox = new VBox();
 		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel, indsetSeasonLabel);
