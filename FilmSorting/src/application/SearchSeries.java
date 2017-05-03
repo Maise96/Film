@@ -37,7 +37,7 @@ public class SearchSeries {
 		sogTextField.setId("sogTextField");
 
 		VBox vbox = new VBox();
-		vbox.getChildren().addAll(sogTextField, sogLabel);
+		vbox.getChildren().addAll(sogLabel, sogTextField);
 		border.setRight(vbox);
 
 		Button sogSogknap = new Button("Søg");

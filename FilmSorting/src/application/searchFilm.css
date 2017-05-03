@@ -15,6 +15,9 @@
 	-fx-text-fill: #ffe7c1;
 }
 #sogLabel{
+	-fx-background-color: #01114c;
+	-fx-background-radius: 10;
+	-fx-min-width: 400;
 	-fx-text-fill: #ffe7c1;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
@@ -22,6 +25,8 @@
 #sogTextField{
 	-fx-background-color: #01114c;
 	-fx-background-radius: 10;
+	-fx-border-color: #0040a8;
+	-fx-border-radius: 10;
 	-fx-text-fill: #ffe7c1;
 	-fx-font-family:'Segoe Script';
 	-fx-font-size: 30.0;
