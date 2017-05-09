@@ -1,5 +1,7 @@
 package application;
 
+import javax.swing.JOptionPane;
+
 import domain.DomainClassFilm;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,6 +15,7 @@ import logic.FilmSortImpl;
 import logic.FilmSortInterface;
 
 public class InsertFilm {
+	PopUpFilmAdded pop = new PopUpFilmAdded();
 
 	public void start(Stage insertFilm) {
 		insertFilm.setTitle("Tilføj en Film");
@@ -26,6 +29,7 @@ public class InsertFilm {
 		Label indsetSubLabel = new Label("Tilføj Undertekst Sprog :");
 		Label sprogsublabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
 		Label subsproglabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
+		Label indsetNoteLabel = new Label("Tilføj Note                  :");
 		sprogsublabel.setId("sprogsublabel");
 		subsproglabel.setId("subsproglabel");
 
@@ -34,14 +38,15 @@ public class InsertFilm {
 		TextField indsetAarstalTekstfelt = new TextField();
 		TextField indsetAudioTekstfelt = new TextField();
 		TextField indsetSubTekstfelt = new TextField();
+		TextField indsetNoteTekstfelt = new TextField();
 
 		VBox indsetLabelVBox = new VBox();
 		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel, sprogsublabel,
-				indsetAudioLabel, indsetSubLabel);
+				indsetAudioLabel, indsetSubLabel, indsetNoteLabel);
 		indsetLabelVBox.setSpacing(10);
 		VBox indsetTextFieldVBox = new VBox();
 		indsetTextFieldVBox.getChildren().addAll(indsetNavnTekstfelt, indsetNameTekstfelt, indsetAarstalTekstfelt,
-				subsproglabel, indsetAudioTekstfelt, indsetSubTekstfelt);
+				subsproglabel, indsetAudioTekstfelt, indsetSubTekstfelt, indsetNoteTekstfelt);
 		indsetTextFieldVBox.setSpacing(10);
 		border.setLeft(indsetLabelVBox);
 		border.setRight(indsetTextFieldVBox);
@@ -56,7 +61,11 @@ public class InsertFilm {
 				sdomain.setAarstal(indsetAarstalTekstfelt.getText());
 				sdomain.setAudio(indsetAudioTekstfelt.getText());
 				sdomain.setSub(indsetSubTekstfelt.getText());
+				sdomain.setNote(indsetNoteTekstfelt.getText());
 				fsi.tilfojFilm(sdomain);
+
+				JOptionPane.showMessageDialog(null, "Film er tilføjet");
+
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}

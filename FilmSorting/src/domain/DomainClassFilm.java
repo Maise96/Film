@@ -8,6 +8,7 @@ public class DomainClassFilm {
 	private String aarstal;
 	private String audio;
 	private String sub;
+	private String note;
 
 	public int getRef() {
 		return ref;
@@ -55,5 +56,13 @@ public class DomainClassFilm {
 
 	public void setSub(String sub) {
 		this.sub = sub;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
 	}
 }

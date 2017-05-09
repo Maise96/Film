@@ -22,12 +22,13 @@ public class InsertDataFilm {
 
 	public DomainClassFilm opretEnFilm(DataAccess dataAccess, DomainClassFilm domainClassFilm) {
 		try (PreparedStatement statement = dataAccess.getConnection()
-				.prepareStatement("INSERT INTO film (navn, name, aarstal, audio, sub) VALUES (?, ?, ?, ?, ?)")) {
+				.prepareStatement("INSERT INTO film (navn, name, aarstal, audio, sub, note) VALUES (?, ?, ?, ?, ?, ?)")) {
 			statement.setString(1, domainClassFilm.getNavn());
 			statement.setString(2, domainClassFilm.getName());
 			statement.setString(3, domainClassFilm.getAarstal());
 			statement.setString(4, domainClassFilm.getAudio());
 			statement.setString(5, domainClassFilm.getSub());
+			statement.setString(6, domainClassFilm.getNote());
 			statement.execute();
 			
 		} catch (SQLException e) {
