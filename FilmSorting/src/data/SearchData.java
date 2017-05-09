@@ -27,11 +27,10 @@ public class SearchData {
 	public List<DomainClassFilm> sogFilmListe(DataAccess dataAccess, List<DomainClassFilm> list, String sogeord) {
 
 		try (PreparedStatement statement = dataAccess.getConnection().prepareStatement(
-				"SELECT * FROM film WHERE upper(navn) LIKE ? OR upper(name) LIKE ? OR aarstal LIKE ?")) {
+				"SELECT * FROM film WHERE upper(navn) LIKE ? OR upper(name) LIKE ?")) {
 
 			statement.setString(1, "%" + sogeord.toUpperCase() + "%");
 			statement.setString(2, "%" + sogeord.toUpperCase() + "%");
-			statement.setString(3, "%" + sogeord + "%");
 
 			try (ResultSet resultset = statement.executeQuery();) {
 
@@ -43,7 +42,9 @@ public class SearchData {
 					sog.setAarstal(resultset.getString("aarstal"));
 					sog.setAudio(resultset.getString("audio"));
 					sog.setSub(resultset.getString("sub"));
+					sog.setNote(resultset.getString("note"));
 					list.add(sog);
+					System.out.println(list.size());
 				}
 			}
 		} catch (SQLException e) {

@@ -17,6 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import logic.FilmSortImpl;
 
 public class SearchSeries {
@@ -38,7 +39,6 @@ public class SearchSeries {
 
 		VBox vbox = new VBox();
 		vbox.getChildren().addAll(sogLabel, sogTextField);
-		border.setRight(vbox);
 
 		Button sogSogknap = new Button("Søg");
 		sogSogknap.setOnAction(e -> {
@@ -62,12 +62,9 @@ public class SearchSeries {
 		HBox knapperhbox = new HBox();
 		knapperhbox.setSpacing(9);
 		knapperhbox.setAlignment(Pos.BOTTOM_LEFT);
-		knapperhbox.getChildren().addAll(sogSogknap, tilbageknap);
-		border.setBottom(knapperhbox);
+		knapperhbox.getChildren().addAll(vbox, sogSogknap, tilbageknap);
+		border.setTop(knapperhbox);
 
-		border.setCenter(table);
-		TableColumn<DomainClassSeries, String> refs = new TableColumn<DomainClassSeries, String>("Nr.");
-		refs.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("refs"));
 		TableColumn<DomainClassSeries, String> navn = new TableColumn<DomainClassSeries, String>("Dansk Titel");
 		navn.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("navn"));
 		TableColumn<DomainClassSeries, String> name = new TableColumn<DomainClassSeries, String>("Engelsk Titel");
@@ -76,10 +73,23 @@ public class SearchSeries {
 		aarstal.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("aarstal"));
 		TableColumn<DomainClassSeries, String> season = new TableColumn<DomainClassSeries, String>("Season");
 		season.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("season"));
+		TableColumn<DomainClassSeries, String> audio = new TableColumn<DomainClassSeries, String>("Sprog");
+		audio.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("audio"));
+		TableColumn<DomainClassSeries, String> sub = new TableColumn<DomainClassSeries, String>("Undertekster");
+		sub.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("sub"));
 
-		table.getColumns().addAll(refs, season, navn, name, aarstal);
+		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.22));
+		name.prefWidthProperty().bind(table.widthProperty().multiply(0.22));
+		aarstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
+		season.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
+		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.229));
+		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.229));
 
-		Scene scene = new Scene(border, 1000, 650);
+		table.getColumns().addAll(season, navn, name, aarstal, audio, sub);
+		table.autosize();
+		border.setBottom(table);
+
+		Scene scene = new Scene(border, 1200, 680);
 		scene.getStylesheets().add(Main.class.getResource("searchSeries.css").toExternalForm());
 		searchSeries.setScene(scene);
 		searchSeries.show();

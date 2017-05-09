@@ -31,14 +31,10 @@ public class SearchFilm {
 		BorderPane border = new BorderPane();
 
 		Label sogLabel = new Label(
-				"Søg på den Danske titel\n eller den Engelske titel.\n Eller søg på Udgivelsesåret.");
+				"Søg på den Danske titel\n eller den Engelske titel.");
 		sogLabel.setId("sogLabel");
 		TextField sogTextField = new TextField();
 		sogTextField.setId("sogTextField");
-
-		VBox vbox = new VBox();
-		vbox.getChildren().addAll(sogLabel, sogTextField);
-		border.setRight(vbox);
 
 		Button sogSogknap = new Button("Søg");
 		sogSogknap.setOnAction(e -> {
@@ -59,16 +55,16 @@ public class SearchFilm {
 			sogFilm.close();
 		});
 
+		VBox vbox = new VBox();
+		vbox.getChildren().addAll(sogLabel, sogTextField);
+		border.setRight(vbox);
+
 		HBox knapperhbox = new HBox();
-		knapperhbox.setSpacing(9);
+		knapperhbox.setSpacing(2);
 		knapperhbox.setAlignment(Pos.BOTTOM_LEFT);
-		knapperhbox.getChildren().addAll(sogSogknap, tilbageknap);
-		border.setBottom(knapperhbox);
+		knapperhbox.getChildren().addAll(vbox, sogSogknap, tilbageknap);
+		border.setTop(knapperhbox);
 
-		border.setCenter(table);
-
-		TableColumn<DomainClassFilm, String> ref = new TableColumn<DomainClassFilm, String>("Nr.");
-		ref.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("ref"));
 		TableColumn<DomainClassFilm, String> navn = new TableColumn<DomainClassFilm, String>("Dansk Titel");
 		navn.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("navn"));
 		TableColumn<DomainClassFilm, String> name = new TableColumn<DomainClassFilm, String>("Engelsk Titel");
@@ -80,9 +76,16 @@ public class SearchFilm {
 		TableColumn<DomainClassFilm, String> sub = new TableColumn<DomainClassFilm, String>("Undertekster");
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("sub"));
 
-		table.getColumns().addAll(ref, navn, name, aarstal, audio, sub);
+		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
+		name.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
+		aarstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
+		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
+		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
+		table.getColumns().addAll(aarstal, navn, name, audio, sub);
+		table.autosize();
+		border.setBottom(table);
 
-		Scene scene = new Scene(border, 1000, 650);
+		Scene scene = new Scene(border, 1200, 680);
 		scene.getStylesheets().add(Main.class.getResource("searchFilm.css").toExternalForm());
 		sogFilm.setScene(scene);
 		sogFilm.show();

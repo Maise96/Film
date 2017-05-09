@@ -6,6 +6,10 @@ public class DomainClassSeries {
 	private String name;
 	private String aarstal;
 	private String season;
+	private String audio;
+	private String sub;
+	private String note;
+	
 	public int getRefs() {
 		return refs;
 	}
@@ -35,5 +39,23 @@ public class DomainClassSeries {
 	}
 	public void setSeason(String season) {
 		this.season = season;
+	}
+	public String getAudio() {
+		return audio;
+	}
+	public void setAudio(String audio) {
+		this.audio = audio;
+	}
+	public String getSub() {
+		return sub;
+	}
+	public void setSub(String sub) {
+		this.sub = sub;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
 	}
 }

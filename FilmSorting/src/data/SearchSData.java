@@ -40,6 +40,9 @@ public class SearchSData {
 					sog.setName(resultset.getString("name"));
 					sog.setSeason(resultset.getString("season"));
 					sog.setAarstal(resultset.getString("aarstal"));
+					sog.setAudio(resultset.getString("audio"));
+					sog.setSub(resultset.getString("sub"));
+					sog.setNote(resultset.getString("note"));
 					list.add(sog);
 				}
 			}

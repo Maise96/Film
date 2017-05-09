@@ -35,3 +35,26 @@
 	-fx-min-height: 60.0;
 	-fx-max-height: 80;
 }
+/* Table Viewet */
+.table-view .column-header-background .label{
+	-fx-font-family:'Segoe Script';
+    -fx-text-fill: white;
+}
+.table-view .column-header {
+    -fx-background-color:#0b245e;
+    -fx-border-color: #ffffff;
+}
+.table-view .table-cell{
+    -fx-text-fill:#ffffff;
+}
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #1a57db;
+}
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #0b245e;
+}
+.table-row-cell:selected {
+    -fx-background-color: #9d00ff;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+}
