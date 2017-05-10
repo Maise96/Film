@@ -2,7 +2,7 @@ package application;
 
 import java.util.List;
 
-import javax.swing.event.ChangeListener;
+import javax.swing.JOptionPane;
 
 import domain.DomainClassFilm;
 import javafx.collections.FXCollections;
@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 import logic.FilmSortImpl;
 
 public class SearchFilm {
-
+	FilmSortImpl impl = new FilmSortImpl();
 	List<DomainClassFilm> filmliste;
 	private ObservableList<DomainClassFilm> observableListSogFilm;
 	TableView<DomainClassFilm> table = new TableView<DomainClassFilm>();
@@ -47,7 +47,12 @@ public class SearchFilm {
 			table.setItems(observableListSogFilm);
 			sogFilm.show();
 		});
-		
+		Button hvormange = new Button("Hvor mange film er der i alt?");
+		hvormange.setOnAction(e -> {
+			FilmSortImpl logicSog = new FilmSortImpl();
+			filmliste = logicSog.sogFilmListe("");
+			JOptionPane.showMessageDialog(null, filmliste.size());
+		});
 		Button tilbageknap = new Button("Tilbage");
 		tilbageknap.setOnAction(e -> {
 			FilmMenu filmMenu = new FilmMenu();
@@ -55,10 +60,12 @@ public class SearchFilm {
 			sogFilm.close();
 		});
 
+		VBox vboxknapper = new VBox();
+		vboxknapper.getChildren().addAll(sogLabel, sogTextField);
 		HBox knapperhbox = new HBox();
 		knapperhbox.setSpacing(2);
 		knapperhbox.setAlignment(Pos.BOTTOM_LEFT);
-		knapperhbox.getChildren().addAll(sogLabel, sogTextField, tilbageknap);
+		knapperhbox.getChildren().addAll(vboxknapper, hvormange, tilbageknap);
 		border.setTop(knapperhbox);
 
 		TableColumn<DomainClassFilm, String> navn = new TableColumn<DomainClassFilm, String>("Dansk Titel");
