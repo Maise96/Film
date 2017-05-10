@@ -36,12 +36,7 @@ public class SearchSeries {
 		sogLabel.setId("sogLabel");
 		TextField sogTextField = new TextField();
 		sogTextField.setId("sogTextField");
-
-		VBox vbox = new VBox();
-		vbox.getChildren().addAll(sogLabel, sogTextField);
-
-		Button sogSogknap = new Button("Søg");
-		sogSogknap.setOnAction(e -> {
+		sogTextField.setOnKeyReleased(e -> {
 			String soog = sogTextField.getText();
 
 			FilmSortImpl logicSog = new FilmSortImpl();
@@ -51,7 +46,7 @@ public class SearchSeries {
 			table.setItems(observableListSogSerie);
 			searchSeries.show();
 		});
-
+		
 		Button tilbageknap = new Button("Tilbage");
 		tilbageknap.setOnAction(e -> {
 			SeriesMenu seriesMenu = new SeriesMenu();
@@ -62,7 +57,7 @@ public class SearchSeries {
 		HBox knapperhbox = new HBox();
 		knapperhbox.setSpacing(9);
 		knapperhbox.setAlignment(Pos.BOTTOM_LEFT);
-		knapperhbox.getChildren().addAll(vbox, sogSogknap, tilbageknap);
+		knapperhbox.getChildren().addAll(sogLabel, sogTextField, tilbageknap);
 		border.setTop(knapperhbox);
 
 		TableColumn<DomainClassSeries, String> navn = new TableColumn<DomainClassSeries, String>("Dansk Titel");
