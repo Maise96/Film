@@ -2,6 +2,8 @@ package application;
 
 import java.util.List;
 
+import javax.swing.event.ChangeListener;
+
 import domain.DomainClassFilm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,14 +32,12 @@ public class SearchFilm {
 		sogFilm.setResizable(false);
 		BorderPane border = new BorderPane();
 
-		Label sogLabel = new Label(
-				"Søg på den Danske titel\n eller den Engelske titel.");
+		Label sogLabel = new Label("Søg på den Danske titel\n eller den Engelske titel.");
 		sogLabel.setId("sogLabel");
 		TextField sogTextField = new TextField();
 		sogTextField.setId("sogTextField");
 
-		Button sogSogknap = new Button("Søg");
-		sogSogknap.setOnAction(e -> {
+		sogTextField.setOnKeyReleased(e -> {
 			String sogeord = sogTextField.getText();
 
 			FilmSortImpl logicSog = new FilmSortImpl();
@@ -47,7 +47,7 @@ public class SearchFilm {
 			table.setItems(observableListSogFilm);
 			sogFilm.show();
 		});
-
+		
 		Button tilbageknap = new Button("Tilbage");
 		tilbageknap.setOnAction(e -> {
 			FilmMenu filmMenu = new FilmMenu();
@@ -55,14 +55,10 @@ public class SearchFilm {
 			sogFilm.close();
 		});
 
-		VBox vbox = new VBox();
-		vbox.getChildren().addAll(sogLabel, sogTextField);
-		border.setRight(vbox);
-
 		HBox knapperhbox = new HBox();
 		knapperhbox.setSpacing(2);
 		knapperhbox.setAlignment(Pos.BOTTOM_LEFT);
-		knapperhbox.getChildren().addAll(vbox, sogSogknap, tilbageknap);
+		knapperhbox.getChildren().addAll(sogLabel, sogTextField, tilbageknap);
 		border.setTop(knapperhbox);
 
 		TableColumn<DomainClassFilm, String> navn = new TableColumn<DomainClassFilm, String>("Dansk Titel");
