@@ -126,12 +126,13 @@ public class ChangeSeries {
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("sub"));
 		TableColumn<DomainClassSeries, String> note = new TableColumn<DomainClassSeries, String>("Note");
 		note.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("note"));
-		// navn.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
-		// name.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
-		// arstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
-		// audio.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
-		// sub.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
-		// note.prefWidthProperty().bind(table.widthProperty().multiply(0));
+		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.194));
+		name.prefWidthProperty().bind(table.widthProperty().multiply(0.194));
+		season.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
+		arstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
+		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.154));
+		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.154));
+		note.prefWidthProperty().bind(table.widthProperty().multiply(0.15));
 		table.getColumns().addAll(ref, navn, name, season, arstal, audio, sub, note);
 
 		border.setLeft(vbox);
@@ -139,7 +140,7 @@ public class ChangeSeries {
 		border.setRight(knapperv);
 
 		Scene scene = new Scene(border, 1000, 650);
-		scene.getStylesheets().add(Main.class.getResource("changeFilm.css").toExternalForm());
+		scene.getStylesheets().add(Main.class.getResource("changeSeries.css").toExternalForm());
 		aendreSerie.setScene(scene);
 		aendreSerie.show();
 	}
