@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 import logic.FilmSortImpl;
 
 public class SearchFilm {
-	FilmSortImpl impl = new FilmSortImpl();
 	List<DomainClassFilm> filmliste;
 	private ObservableList<DomainClassFilm> observableListSogFilm;
 	TableView<DomainClassFilm> table = new TableView<DomainClassFilm>();
@@ -32,25 +31,29 @@ public class SearchFilm {
 		sogFilm.setResizable(false);
 		BorderPane border = new BorderPane();
 
-		Label sogLabel = new Label("Søg på den Danske titel\n eller den Engelske titel.");
+		Label sogLabel = new Label("Søg på den Danske \n eller den Engelske titel.");
 		sogLabel.setId("sogLabel");
 		TextField sogTextField = new TextField();
 		sogTextField.setId("sogTextField");
-
 		sogTextField.setOnKeyReleased(e -> {
 			String sogeord = sogTextField.getText();
-
-			FilmSortImpl logicSog = new FilmSortImpl();
-			filmliste = logicSog.sogFilmListe(sogeord);
-
+			FilmSortImpl logicSoge = new FilmSortImpl();
+			filmliste = logicSoge.sogFilmListe(sogeord);
 			observableListSogFilm = FXCollections.observableArrayList(filmliste);
 			table.setItems(observableListSogFilm);
 			sogFilm.show();
 		});
+
+		// Gør at tablet bliver vist fra start
+		FilmSortImpl logicSog = new FilmSortImpl();
+		filmliste = logicSog.sogFilmListe("");
+		observableListSogFilm = FXCollections.observableArrayList(filmliste);
+		table.setItems(observableListSogFilm);
+
 		Button hvormange = new Button("Hvor mange film er der i alt?");
 		hvormange.setOnAction(e -> {
-			FilmSortImpl logicSog = new FilmSortImpl();
-			filmliste = logicSog.sogFilmListe("");
+			FilmSortImpl logicSoge = new FilmSortImpl();
+			filmliste = logicSoge.sogFilmListe("");
 			JOptionPane.showMessageDialog(null, filmliste.size());
 		});
 		Button tilbageknap = new Button("Tilbage");
@@ -60,13 +63,12 @@ public class SearchFilm {
 			sogFilm.close();
 		});
 
-		VBox vboxknapper = new VBox();
-		vboxknapper.getChildren().addAll(sogLabel, sogTextField);
 		HBox knapperhbox = new HBox();
 		knapperhbox.setSpacing(2);
 		knapperhbox.setAlignment(Pos.BOTTOM_LEFT);
-		knapperhbox.getChildren().addAll(vboxknapper, hvormange, tilbageknap);
-		border.setTop(knapperhbox);
+		knapperhbox.getChildren().addAll(sogLabel, hvormange, tilbageknap);
+		VBox vboxknapper = new VBox();
+		vboxknapper.getChildren().addAll(knapperhbox, sogTextField);
 
 		TableColumn<DomainClassFilm, String> navn = new TableColumn<DomainClassFilm, String>("Dansk Titel");
 		navn.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("navn"));
@@ -85,13 +87,13 @@ public class SearchFilm {
 		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
 		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
 		table.getColumns().addAll(aarstal, navn, name, audio, sub);
-		table.autosize();
+
 		border.setBottom(table);
+		border.setTop(vboxknapper);
 
 		Scene scene = new Scene(border, 1200, 680);
 		scene.getStylesheets().add(Main.class.getResource("searchFilm.css").toExternalForm());
 		sogFilm.setScene(scene);
 		sogFilm.show();
 	}
-
 }
