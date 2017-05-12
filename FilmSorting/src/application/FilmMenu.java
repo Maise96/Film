@@ -11,7 +11,6 @@ public class FilmMenu {
 	public void start(Stage filmMenu) {
 		filmMenu.setTitle("Film Menu");
 		filmMenu.setResizable(false);
-
 		BorderPane border = new BorderPane();
 
 		Button filmMenuSogFilm = new Button("Søg efter Film");
@@ -28,6 +27,8 @@ public class FilmMenu {
 		});
 		Button filmMenuAendringer = new Button("Ændrer i en Film");
 		filmMenuAendringer.setOnAction(e -> {
+			ChangeFilm changeFilm = new ChangeFilm();
+			changeFilm.start(new Stage());
 			filmMenu.close();
 		});
 
