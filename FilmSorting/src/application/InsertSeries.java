@@ -9,8 +9,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import logic.FilmSortImpl;
-import logic.FilmSortInterface;
+import logic.SeriesSortImpl;
+import logic.SeriesSortInterface;
 
 public class InsertSeries {
 	public void start(Stage insertSeries) {
@@ -22,7 +22,6 @@ public class InsertSeries {
 		Label indsetNameLabel = new Label("Tilføj Engelske Titel : ");
 		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår    : ");
 		Label indsetSeasonLabel = new Label("Tilføj Season/Nr.    : ");
-
 		TextField indsetNavnTekstfelt = new TextField();
 		TextField indsetNameTekstfelt = new TextField();
 		TextField indsetAarstalTekstfelt = new TextField();
@@ -41,12 +40,12 @@ public class InsertSeries {
 		Button indsetTilfojKnap = new Button("Tilføj");
 		indsetTilfojKnap.setOnAction(e -> {
 			try {
-				FilmSortInterface fsi = new FilmSortImpl();
+				SeriesSortInterface fsi = new SeriesSortImpl();
 				DomainClassSeries sdomain = new DomainClassSeries();
 				sdomain.setNavn(indsetNavnTekstfelt.getText());
 				sdomain.setName(indsetNameTekstfelt.getText());
 				sdomain.setAarstal(indsetAarstalTekstfelt.getText());
-				sdomain.setSeason(indsetSeasonTekstfelt.getText());
+				sdomain.setSeason(Integer.parseInt(indsetSeasonTekstfelt.getText()));
 				fsi.tilfojEnSerie(sdomain);
 			} catch (Exception e1) {
 				e1.printStackTrace();
@@ -61,10 +60,10 @@ public class InsertSeries {
 
 		HBox indsetKnapperHBox = new HBox();
 		indsetKnapperHBox.getChildren().addAll(indsetTilfojKnap, indsetTilbageKnap);
-		indsetKnapperHBox.setSpacing(310);
+		indsetKnapperHBox.setSpacing(400);
 		border.setBottom(indsetKnapperHBox);
 
-		Scene scene = new Scene(border, 1000, 650);
+		Scene scene = new Scene(border, 1200, 680);
 		scene.getStylesheets().add(Main.class.getResource("insertSeries.css").toExternalForm());
 		insertSeries.setScene(scene);
 		insertSeries.show();
