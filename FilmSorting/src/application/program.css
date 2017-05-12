@@ -5,9 +5,8 @@
 	-fx-background-size: cover;
 }
 .button{
-	-fx-background-color: #428793;
+	-fx-background-color: #000000;
 	-fx-background-radius: 10;
-	-fx-border-color: #7fc5d1;
 	-fx-border-radius: 10;
 	-fx-font-size: 50.0;
 	-fx-font-family: 'Edwardian Script ITC';
@@ -16,5 +15,8 @@
 	-fx-max-height: 200;
 	-fx-max-width: 400;
 	-fx-text-fill: white;
-	
+}
+.button:pressed{
+	-fx-background-color: #404240;
+	-fx-background-radius: 10;
 }
