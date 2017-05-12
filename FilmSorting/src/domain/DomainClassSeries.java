@@ -5,7 +5,7 @@ public class DomainClassSeries {
 	private String navn;
 	private String name;
 	private String aarstal;
-	private String season;
+	private int season;
 	private String audio;
 	private String sub;
 	private String note;
@@ -34,10 +34,10 @@ public class DomainClassSeries {
 	public void setAarstal(String aarstal) {
 		this.aarstal = aarstal;
 	}
-	public String getSeason() {
+	public int getSeason() {
 		return season;
 	}
-	public void setSeason(String season) {
+	public void setSeason(int season) {
 		this.season = season;
 	}
 	public String getAudio() {
