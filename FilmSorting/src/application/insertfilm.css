@@ -1,12 +1,12 @@
 /*InsertFilm klassen*/
 .root{
-	-fx-background-image: url(tvdgodt.jpg);
+	-fx-background-image: url(st3.jpg);
 	-fx-background-size: stretch;
 }
 .button {
-	-fx-background-color: #8c0000;
+	-fx-background-color: #330170;
 	-fx-background-radius: 10;
-	-fx-border-color: #d60808;
+	-fx-border-color: #7200ff;
 	-fx-border-radius: 10px;
 	-fx-font-size: 40.0;
 	-fx-font-family: 'Vladimir Script';
@@ -16,8 +16,11 @@
 	-fx-max-width: 500;
 	-fx-text-fill: #ffe7c1;
 }
+.button:pressed{
+	-fx-background-color: #7200ff;
+}
 .label{
-	-fx-text-fill: #d60808;
+	-fx-text-fill: #260060;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
 	-fx-min-width: 350.0;
@@ -27,9 +30,9 @@
 }
 .text-field{
 	-fx-background-color:transparent;
-	-fx-border-color: #d60808;
+	-fx-border-color: #7200ff;
 	-fx-border-radius: 10;
-	-fx-text-fill: #d60808;
+	-fx-text-fill: #260060;
 	-fx-font-family: 'Segoe Script';
 	-fx-font-size: 30.0;
 	-fx-min-width: 350.0;
@@ -38,16 +41,16 @@
 	-fx-max-height: 55;
 }
 .text-field:focused{
-	-fx-background-color: #bac2fc;
+	-fx-background-color: #c199ff;
 	-fx-background-radius: 10;
 }
 #subsproglabel{
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #ffffff;
 	-fx-font-family: 'Segoe Script';
 	-fx-font-size: 10.0;
 }
 #sprogsublabel{
-	-fx-text-fill: #ffe7c1;
+	-fx-text-fill: #ffffff;
 	-fx-font-family: 'Segoe Script';
 	-fx-font-size: 10.0;
 }

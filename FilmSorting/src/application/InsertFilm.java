@@ -15,21 +15,20 @@ import logic.FilmSortImpl;
 import logic.FilmSortInterface;
 
 public class InsertFilm {
-	PopUpFilmAdded pop = new PopUpFilmAdded();
 
 	public void start(Stage insertFilm) {
 		insertFilm.setTitle("Tilføj en Film");
 		insertFilm.setResizable(false);
 		BorderPane border = new BorderPane();
 
-		Label indsetNavnLabel = new Label("Tilføj Danske Titel       :");
-		Label indsetNameLabel = new Label("Tilføj Engelske Titel     :");
-		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår        :");
-		Label indsetAudioLabel = new Label("Tilføj Audio Sprog       :");
-		Label indsetSubLabel = new Label("Tilføj Undertekst Sprog :");
+		Label indsetNavnLabel = new Label("Tilføj Danske Titel");
+		Label indsetNameLabel = new Label("Tilføj Engelske Titel");
+		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår");
+		Label indsetAudioLabel = new Label("Tilføj Audio Sprog");
+		Label indsetSubLabel = new Label("Tilføj Undertekst Sprog");
 		Label sprogsublabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
 		Label subsproglabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
-		Label indsetNoteLabel = new Label("Tilføj Note                  :");
+		Label indsetNoteLabel = new Label("Tilføj Note");
 		sprogsublabel.setId("sprogsublabel");
 		subsproglabel.setId("subsproglabel");
 
@@ -55,14 +54,14 @@ public class InsertFilm {
 		indsetTilfojKnap.setOnAction(e -> {
 			try {
 				FilmSortInterface fsi = new FilmSortImpl();
-				DomainClassFilm sdomain = new DomainClassFilm();
-				sdomain.setNavn(indsetNavnTekstfelt.getText());
-				sdomain.setName(indsetNameTekstfelt.getText());
-				sdomain.setAarstal(indsetAarstalTekstfelt.getText());
-				sdomain.setAudio(indsetAudioTekstfelt.getText());
-				sdomain.setSub(indsetSubTekstfelt.getText());
-				sdomain.setNote(indsetNoteTekstfelt.getText());
-				fsi.tilfojFilm(sdomain);
+				DomainClassFilm domain = new DomainClassFilm();
+				domain.setNavn(indsetNavnTekstfelt.getText());
+				domain.setName(indsetNameTekstfelt.getText());
+				domain.setAarstal(indsetAarstalTekstfelt.getText());
+				domain.setAudio(indsetAudioTekstfelt.getText());
+				domain.setSub(indsetSubTekstfelt.getText());
+				domain.setNote(indsetNoteTekstfelt.getText());
+				fsi.tilfojFilm(domain);
 
 				JOptionPane.showMessageDialog(null, "Film er tilføjet");
 
