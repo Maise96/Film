@@ -28,6 +28,8 @@ public class SeriesMenu {
 		});
 		Button seriesMenuAendringer = new Button("Ændrer i en Serie");
 		seriesMenuAendringer.setOnAction(e -> {
+			ChangeSeries changeSeries = new ChangeSeries();
+			changeSeries.start(new Stage());
 			seriesMenu.close();
 		});
 
