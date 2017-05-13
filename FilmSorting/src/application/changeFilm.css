@@ -1,0 +1,84 @@
+/*Search Serie klassen */
+.root{
+	-fx-background-image: url(starwarss.jpg);
+	-fx-background-size: stretch;
+}
+.button {
+	-fx-background-color: #a00053;
+	-fx-background-radius: 10;
+	-fx-border-color: #ff116c;
+	-fx-border-radius: 10px;
+	-fx-font-size: 40.0;
+	-fx-font-family: 'Vladimir Script';
+	-fx-min-height: 100.0;
+	-fx-min-width: 300.0;
+	-fx-text-fill: #ffe7c1;
+}
+.button:focused{
+	-fx-background-color: #ff116c;
+}
+.label{
+	-fx-text-fill: #ffe7c1;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 30.0;
+	-fx-background-color: #a00053;
+	-fx-background-radius: 10;
+	-fx-min-width: 220;
+}
+.text-field{
+	-fx-background-color:transparent;
+	-fx-border-color: #ff116c;
+	-fx-border-radius: 10;
+	-fx-text-fill: #a00053;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 20.0;
+	-fx-min-width: 280.0;
+	-fx-max-width: 300;
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+.text-field:focused{
+	-fx-background-color: #ffafd8;
+	-fx-background-radius: 10;
+}
+#sogtext{
+	-fx-background-color:transparent;
+	-fx-border-color: #ff116c;
+	-fx-border-radius: 10;
+	-fx-text-fill: #a00053;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 20.0;
+	-fx-min-width: 310.0;
+	-fx-max-width: 320;
+	-fx-min-height: 45.0;
+	-fx-max-height: 55;
+}
+#sogtext:focused{
+	-fx-background-color: #ffafd8;
+	-fx-background-radius: 10;
+}
+/* Table Viewet */
+.table-view .column-header-background .label{
+	-fx-font-family:'Segoe Script';
+    -fx-text-fill: white;
+    -fx-font-size: 12.0;
+    -fx-background-color: transparent;
+}
+.table-view .column-header {
+    -fx-background-color:#a00053;
+    -fx-border-color: #ffffff;
+}
+.table-view .table-cell{
+    -fx-text-fill:#ffffff;
+}
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #ff116c;
+}
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #a00053;
+}
+.table-row-cell:selected {
+    -fx-background-color: #ff6db8;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+}

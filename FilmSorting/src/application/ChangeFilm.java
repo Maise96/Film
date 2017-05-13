@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import com.sun.javafx.image.impl.ByteIndexed.Getter;
-
 import domain.DomainClassFilm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,9 +36,6 @@ public class ChangeFilm {
 		observableListSogFilm = FXCollections.observableArrayList(filmliste);
 		table.setItems(observableListSogFilm);
 
-		
-		
-
 		// Labels og tekstfelterne til redigering af en film
 		Label sogTextLabel = new Label("Søg på filmens navn");
 		Label reflabel = new Label("Skriv Ref.Nr her");
@@ -50,12 +45,6 @@ public class ChangeFilm {
 		Label audioLabel = new Label("Audio");
 		Label subLabel = new Label("Undertekst");
 		Label noteLabel = new Label("Note");
-		navnLabel.setId("navnlabel");
-		nameLabel.setId("namelabel");
-		aarstalLabel.setId("aarstallabel");
-		audioLabel.setId("audiolabel");
-		subLabel.setId("sublabel");
-		noteLabel.setId("notelabel");
 		TextField reftext = new TextField();
 		TextField navnTextField = new TextField();
 		TextField nameTextField = new TextField();
@@ -85,8 +74,14 @@ public class ChangeFilm {
 			domain.setSub(subTextField.getText());
 			domain.setNote(noteTextField.getText());
 			fsi.redigerFilm(domain);
-
 			JOptionPane.showMessageDialog(null, "Filmens oplysninger er ændret");
+			reftext.clear();
+			navnTextField.clear();
+			nameTextField.clear();
+			aarstalTextField.clear();
+			audioTextField.clear();
+			subTextField.clear();
+			noteTextField.clear();
 		});
 
 		Button tilbageknap = new Button("Tilbage");
@@ -131,19 +126,21 @@ public class ChangeFilm {
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("sub"));
 		TableColumn<DomainClassFilm, String> note = new TableColumn<DomainClassFilm, String>("Note");
 		note.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("note"));
-//		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
-//		name.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
-//		arstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
-//		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
-//		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
-//		note.prefWidthProperty().bind(table.widthProperty().multiply(0));
+
+		ref.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
+		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
+		name.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
+		arstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
+		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.174));
+		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.174));
+		note.prefWidthProperty().bind(table.widthProperty().multiply(0.15));
 		table.getColumns().addAll(ref, navn, name, arstal, audio, sub, note);
-		
+
 		border.setLeft(vbox);
 		border.setBottom(table);
 		border.setRight(knapperv);
-		
-		Scene scene = new Scene(border, 1000, 650);
+
+		Scene scene = new Scene(border, 1200, 680);
 		scene.getStylesheets().add(Main.class.getResource("changeFilm.css").toExternalForm());
 		aendreFilm.setScene(scene);
 		aendreFilm.show();
