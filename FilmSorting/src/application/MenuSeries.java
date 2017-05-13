@@ -7,7 +7,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class SeriesMenu {
+public class MenuSeries {
 	public void start(Stage seriesMenu) {
 		seriesMenu.setTitle("Serie Menu");
 		seriesMenu.setResizable(false);
@@ -49,7 +49,7 @@ public class SeriesMenu {
 		border.setCenter(vboxKnapper);
 
 		Scene scene = new Scene(border, 1000, 650);
-		scene.getStylesheets().add(Main.class.getResource("seriesMenu.css").toExternalForm());
+		scene.getStylesheets().add(Main.class.getResource("menuSeries.css").toExternalForm());
 		seriesMenu.setScene(scene);
 		seriesMenu.show();
 	}
