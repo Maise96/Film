@@ -47,7 +47,7 @@ public class MenuFilm {
 		border.setCenter(vboxKnapper);
 
 		Scene scene = new Scene(border, 1000, 650);
-		scene.getStylesheets().add(Main.class.getResource("filmMenu.css").toExternalForm());
+		scene.getStylesheets().add(Main.class.getResource("menuFilm.css").toExternalForm());
 		filmMenu.setScene(scene);
 		filmMenu.show();
 	}
