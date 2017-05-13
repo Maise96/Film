@@ -86,8 +86,8 @@ public class ChangeFilm {
 
 		Button tilbageknap = new Button("Tilbage");
 		tilbageknap.setOnAction(e -> {
-			FilmMenu filmMenu = new FilmMenu();
-			filmMenu.start(new Stage());
+			MenuFilm menuFilm = new MenuFilm();
+			menuFilm.start(new Stage());
 			aendreFilm.close();
 		});
 

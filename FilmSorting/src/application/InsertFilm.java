@@ -71,8 +71,8 @@ public class InsertFilm {
 		});
 		Button indsetTilbageKnap = new Button("Tilbage");
 		indsetTilbageKnap.setOnAction(e -> {
-			FilmMenu filmMenu = new FilmMenu();
-			filmMenu.start(new Stage());
+			MenuFilm menuFilm = new MenuFilm();
+			menuFilm.start(new Stage());
 			insertFilm.close();
 		});
 
