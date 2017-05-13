@@ -4,11 +4,11 @@ import java.util.List;
 
 import data.ChangeFilmData;
 import data.InsertDataFilm;
-import data.SearchData;
+import data.SearchFilmData;
 import domain.DomainClassFilm;
 
 public class FilmSortImpl implements FilmSortInterface {
-	private SearchData sd = new SearchData();
+	private SearchFilmData sd = new SearchFilmData();
 	private InsertDataFilm tf = new InsertDataFilm();
 	private ChangeFilmData rf = new ChangeFilmData();
 
