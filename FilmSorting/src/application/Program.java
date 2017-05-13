@@ -17,15 +17,15 @@ public class Program {
 
 		Button programFilm = new Button("Film");
 		programFilm.setOnAction(e -> {
-			FilmMenu filmMenu = new FilmMenu();
-			filmMenu.start(new Stage());
+			MenuFilm menuFilm = new MenuFilm();
+			menuFilm.start(new Stage());
 			program.close();
 		});
 
 		Button programSeries = new Button("Serier");
 		programSeries.setOnAction(e -> {
-			SeriesMenu seriesMenu = new SeriesMenu();
-			seriesMenu.start(new Stage());
+			MenuSeries menuSeries = new MenuSeries();
+			menuSeries.start(new Stage());
 			program.close();
 		});
 
