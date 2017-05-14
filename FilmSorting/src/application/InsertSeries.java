@@ -1,5 +1,7 @@
 package application;
 
+import javax.swing.JOptionPane;
+
 import domain.DomainClassSeries;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,52 +20,74 @@ public class InsertSeries {
 		insertSeries.setResizable(false);
 		BorderPane border = new BorderPane();
 
-		Label indsetNavnLabel = new Label("Tilføj Danske Titel   : ");
-		Label indsetNameLabel = new Label("Tilføj Engelske Titel : ");
-		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår    : ");
-		Label indsetSeasonLabel = new Label("Tilføj Season/Nr.    : ");
-		TextField indsetNavnTekstfelt = new TextField();
-		TextField indsetNameTekstfelt = new TextField();
-		TextField indsetAarstalTekstfelt = new TextField();
-		TextField indsetSeasonTekstfelt = new TextField();
-
-		VBox indsetLabelVBox = new VBox();
-		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel, indsetSeasonLabel);
-		indsetLabelVBox.setSpacing(10);
-		border.setLeft(indsetLabelVBox);
-		VBox indsetTextFieldVBox = new VBox();
-		indsetTextFieldVBox.getChildren().addAll(indsetNavnTekstfelt, indsetNameTekstfelt, indsetAarstalTekstfelt,
-				indsetSeasonTekstfelt);
-		indsetTextFieldVBox.setSpacing(10);
-		border.setRight(indsetTextFieldVBox);
+		Label navnLabel = new Label("Tilføj Danske Titel");
+		Label nameLabel = new Label("Tilføj Engelske Titel");
+		Label aarstalLabel = new Label("Tilføj Udgivelsesår");
+		Label seasonLabel = new Label("Tilføj Season.Nr.");
+		Label audioLabel = new Label("Tilføj Audio Sprog");
+		Label subLabel = new Label("Tilføj Undertekst Sprog");
+		Label noteLabel = new Label("Tilføj Note");
+		Label labelLabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
+		Label textLabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
+		labelLabel.setId("labellabel");
+		textLabel.setId("textlabel");
+		TextField navnTekstfelt = new TextField();
+		TextField nameTekstfelt = new TextField();
+		TextField aarstalTekstfelt = new TextField();
+		TextField seasonTekstfelt = new TextField();
+		TextField audioTekstfelt = new TextField();
+		TextField subTekstfelt = new TextField();
+		TextField noteTekstfelt = new TextField();
 
 		Button indsetTilfojKnap = new Button("Tilføj");
 		indsetTilfojKnap.setOnAction(e -> {
 			try {
 				SeriesSortInterface fsi = new SeriesSortImpl();
 				DomainClassSeries sdomain = new DomainClassSeries();
-				sdomain.setNavn(indsetNavnTekstfelt.getText());
-				sdomain.setName(indsetNameTekstfelt.getText());
-				sdomain.setAarstal(indsetAarstalTekstfelt.getText());
-				sdomain.setSeason(Integer.parseInt(indsetSeasonTekstfelt.getText()));
+				sdomain.setNavn(navnTekstfelt.getText());
+				sdomain.setName(nameTekstfelt.getText());
+				sdomain.setAarstal(aarstalTekstfelt.getText());
+				sdomain.setSeason(Integer.parseInt(seasonTekstfelt.getText()));
+				sdomain.setAudio(audioTekstfelt.getText());
+				sdomain.setSub(subTekstfelt.getText());
+				sdomain.setNote(noteTekstfelt.getText());
 				fsi.tilfojEnSerie(sdomain);
+				JOptionPane.showMessageDialog(null, "Serien er tilføjet");
+				navnTekstfelt.clear();
+				nameTekstfelt.clear();
+				aarstalTekstfelt.clear();
+				seasonTekstfelt.clear();
+				audioTekstfelt.clear();
+				subTekstfelt.clear();
+				noteTekstfelt.clear();
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
 		});
 		Button indsetTilbageKnap = new Button("Tilbage");
 		indsetTilbageKnap.setOnAction(e -> {
-			SeriesMenu seriesMenu = new SeriesMenu();
-			seriesMenu.start(new Stage());
+			MenuSeries menuSeries = new MenuSeries();
+			menuSeries.start(new Stage());
 			insertSeries.close();
 		});
 
+		VBox indsetLabelVBox = new VBox();
+		indsetLabelVBox.getChildren().addAll(navnLabel, nameLabel, aarstalLabel, seasonLabel, labelLabel, audioLabel,
+				subLabel, noteLabel);
+		indsetLabelVBox.setSpacing(10);
+		VBox indsetTextFieldVBox = new VBox();
+		indsetTextFieldVBox.getChildren().addAll(navnTekstfelt, nameTekstfelt, aarstalTekstfelt, seasonTekstfelt,
+				textLabel, audioTekstfelt, subTekstfelt, noteTekstfelt);
+		indsetTextFieldVBox.setSpacing(10);
 		HBox indsetKnapperHBox = new HBox();
 		indsetKnapperHBox.getChildren().addAll(indsetTilfojKnap, indsetTilbageKnap);
-		indsetKnapperHBox.setSpacing(400);
-		border.setBottom(indsetKnapperHBox);
+		indsetKnapperHBox.setSpacing(310);
 
-		Scene scene = new Scene(border, 1200, 680);
+		border.setBottom(indsetKnapperHBox);
+		border.setRight(indsetTextFieldVBox);
+		border.setLeft(indsetLabelVBox);
+
+		Scene scene = new Scene(border, 1000, 650);
 		scene.getStylesheets().add(Main.class.getResource("insertSeries.css").toExternalForm());
 		insertSeries.setScene(scene);
 		insertSeries.show();

@@ -4,9 +4,9 @@
 	-fx-background-size: stretch;
 }
 .button {
-	-fx-background-color: #8c0000;
+	-fx-background-color: #c45100;
 	-fx-background-radius: 10;
-	-fx-border-color: #d60808;
+	-fx-border-color: #ff7200;
 	-fx-border-radius: 10px;
 	-fx-font-size: 40.0;
 	-fx-font-family: 'Vladimir Script';
@@ -16,8 +16,11 @@
 	-fx-max-width: 500;
 	-fx-text-fill: #ffe7c1;
 }
+.button:pressed{
+	-fx-background-color: #ff7200;
+}
 .label{
-	-fx-text-fill: #d60808;
+	-fx-text-fill: #ff7200;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
 	-fx-min-width: 350.0;
@@ -27,17 +30,27 @@
 }
 .text-field{
 	-fx-background-color:transparent;
-	-fx-border-color: #d60808;
+	-fx-border-color: #ff7200;
 	-fx-border-radius: 10;
-	-fx-text-fill: #d60808;
+	-fx-text-fill: #ff7200;
 	-fx-font-family: 'Segoe Script';
-	-fx-font-size: 30.0;
+	-fx-font-size: 20.0;
 	-fx-min-width: 350.0;
 	-fx-max-width: 360;
 	-fx-min-height: 45.0;
 	-fx-max-height: 55;
 }
 .text-field:focused{
-	-fx-background-color: #bac2fc;
+	-fx-background-color: #ffcca3;
 	-fx-background-radius: 10;
+}
+#labellabel{
+	-fx-text-fill: #ffffff;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 10.0;
+}
+#textlabel{
+	-fx-text-fill: #ffffff;
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 10.0;
 }
