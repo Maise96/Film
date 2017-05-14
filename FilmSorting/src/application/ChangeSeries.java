@@ -82,7 +82,7 @@ public class ChangeSeries {
 
 		Button tilbageknap = new Button("Tilbage");
 		tilbageknap.setOnAction(e -> {
-			SeriesMenu serieMenu = new SeriesMenu();
+			MenuSeries serieMenu = new MenuSeries();
 			serieMenu.start(new Stage());
 			aendreSerie.close();
 		});

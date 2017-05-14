@@ -1,6 +1,6 @@
 /*Search Serie klassen */
 .root{
-	-fx-background-image: url(tvd.jpg);
+	-fx-background-image: url(tvd2.jpg);
 	-fx-background-size: stretch;
 }
 .button {
@@ -22,7 +22,7 @@
 	-fx-text-fill: #ffe7c1;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 30.0;
-	-fx-background-color: #8c0000;
+	-fx-background-color: transparent;
 	-fx-background-radius: 10;
 	-fx-min-width: 220;
 }
@@ -39,7 +39,7 @@
 	-fx-max-height: 55;
 }
 .text-field:focused{
-	-fx-background-color: #ff91bb;
+	-fx-background-color: #ffa399;
 	-fx-background-radius: 10;
 }
 #sogtext{
@@ -55,7 +55,7 @@
 	-fx-max-height: 55;
 }
 #sogtext:focused{
-	-fx-background-color: #ff91bb;
+	-fx-background-color: #ffa399;
 	-fx-background-radius: 10;
 }
 /* Table Viewet */
@@ -79,7 +79,7 @@
     -fx-background-color: -fx-table-cell-border-color, #8c0000;
 }
 .table-row-cell:selected {
-    -fx-background-color: #ff116c;
+    -fx-background-color: #ed5140;
     -fx-background-insets: 0;
     -fx-background-radius: 5;
 }
