@@ -36,7 +36,6 @@ public class ChangeFilm {
 		observableListSogFilm = FXCollections.observableArrayList(filmliste);
 		table.setItems(observableListSogFilm);
 
-		// Labels og tekstfelterne til redigering af en film
 		Label sogTextLabel = new Label("Søg på filmens navn");
 		Label reflabel = new Label("Skriv Ref.Nr her");
 		Label navnLabel = new Label("Navn");
@@ -84,6 +83,13 @@ public class ChangeFilm {
 			noteTextField.clear();
 		});
 
+		Button sletknap = new Button("Slet en Film");
+		sletknap.setOnAction(e -> {
+			DeleteFilm deleteFilm = new DeleteFilm();
+			deleteFilm.start(new Stage());
+			aendreFilm.close();
+		});
+		
 		Button tilbageknap = new Button("Tilbage");
 		tilbageknap.setOnAction(e -> {
 			MenuFilm menuFilm = new MenuFilm();
@@ -108,7 +114,7 @@ public class ChangeFilm {
 		HBox noteh = new HBox();
 		noteh.getChildren().addAll(noteLabel, noteTextField);
 		VBox knapperv = new VBox();
-		knapperv.getChildren().addAll(tilfojknap, tilbageknap);
+		knapperv.getChildren().addAll(tilfojknap, sletknap, tilbageknap);
 		VBox vbox = new VBox();
 		vbox.getChildren().addAll(sogh, refh, navnh, nameh, aarstalh, audioh, subh, noteh);
 

@@ -1,7 +1,6 @@
 /*Search Serie klassen */
 .root{
-	-fx-background-image: url(starwarss.jpg);
-	-fx-background-size: stretch;
+	-fx-background-color: #a00053;
 }
 .button {
 	-fx-background-color: #a00053;
@@ -80,4 +79,10 @@
     -fx-background-color: #ff6db8;
     -fx-background-insets: 0;
     -fx-background-radius: 5;
+}
+#sikkerlabel{
+	-fx-text-fill: #ffffff;
+	-fx-font-family: 'Vladimir Script';
+	-fx-font-size: 50.0;
+	-fx-min-width: 500;
 }

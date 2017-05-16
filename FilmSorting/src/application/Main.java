@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@Override
 	public void start(Stage program) {
-		Program view = new Program();
+		DeleteFilm view = new DeleteFilm();
 		view.start(program);
 	}
 
