@@ -39,6 +39,7 @@
 .text-field:focused{
 	-fx-background-color: #ffafd8;
 	-fx-background-radius: 10;
+	-fx-text-fill: #ff116c;
 }
 #sogtext{
 	-fx-background-color:transparent;
