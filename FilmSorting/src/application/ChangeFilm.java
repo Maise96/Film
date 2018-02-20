@@ -83,8 +83,8 @@ public class ChangeFilm {
 			audioTextField.clear();
 			subTextField.clear();
 			noteTextField.clear();
-			ChangeFilm menuFilm = new ChangeFilm();
-			menuFilm.start(new Stage());
+			ChangeFilm change = new ChangeFilm();
+			change.start(new Stage());
 			aendreFilm.close();
 		});
 

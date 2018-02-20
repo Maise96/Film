@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import domain.DomainClassFilm;
 import domain.DomainClassSeries;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -37,7 +39,6 @@ public class ChangeSeries {
 		table.setItems(observableListSogSerie);
 
 		Label sogTextLabel = new Label("Søg på Seriens navn");
-		Label reflabel = new Label("Skriv Ref.Nr her");
 		Label navnLabel = new Label("Navn");
 		Label nameLabel = new Label("Name");
 		Label seasonLabel = new Label("Season");
@@ -63,21 +64,43 @@ public class ChangeSeries {
 			table.setItems(observableListSogSerie);
 		});
 
+		// Tilføj knappen
 		Button tilfojknap = new Button("Tilføj Ændringer");
 		tilfojknap.setOnAction(e -> {
-			SeriesSortInterface ssi = new SeriesSortImpl();
-			DomainClassSeries domain = new DomainClassSeries();
-			domain.setRefs(Integer.parseInt(reftext.getText()));
-			domain.setNavn(navnText.getText());
-			domain.setName(nameText.getText());
-			domain.setSeason(Integer.parseInt(seasonText.getText()));
-			domain.setAarstal(aarstalText.getText());
-			domain.setAudio(audioText.getText());
-			domain.setSub(subText.getText());
-			domain.setNote(noteText.getText());
-			ssi.redigerSerie(domain);
+			try {
+				SeriesSortInterface ssi = new SeriesSortImpl();
+				DomainClassSeries domain = new DomainClassSeries();
+				domain.setRefs(Integer.parseInt(reftext.getText()));
+				domain.setNavn(navnText.getText());
+				domain.setName(nameText.getText());
+				domain.setSeason(Integer.parseInt(seasonText.getText()));
+				domain.setAarstal(aarstalText.getText());
+				domain.setAudio(audioText.getText());
+				domain.setSub(subText.getText());
+				domain.setNote(noteText.getText());
+				ssi.redigerSerie(domain);
+				JOptionPane.showMessageDialog(null, "Seriens oplysninger er ændret");
+				navnText.clear();
+				nameText.clear();
+				aarstalText.clear();
+				audioText.clear();
+				subText.clear();
+				noteText.clear();
+				ChangeSeries change = new ChangeSeries();
+				change.start(new Stage());
+				aendreSerie.close();
+			} catch (Exception e1) {
+				ExceptionView view = new ExceptionView();
+				view.start(new Stage());
+				seasonText.clear();
+			}
+		});
 
-			JOptionPane.showMessageDialog(null, "Seriens oplysninger er ændret");
+		Button sletknap = new Button("Slet en Serie");
+		sletknap.setOnAction(e -> {
+			// DeleteSeries deleteserie = new DeleteSeries();
+			// deleteserie.start(new Stage());
+			aendreSerie.close();
 		});
 
 		Button tilbageknap = new Button("Tilbage");
@@ -87,10 +110,9 @@ public class ChangeSeries {
 			aendreSerie.close();
 		});
 
+		// Opsætning af felter
 		HBox sogh = new HBox();
 		sogh.getChildren().addAll(sogTextLabel, sogText);
-		HBox refh = new HBox();
-		refh.getChildren().addAll(reflabel, reftext);
 		HBox navnh = new HBox();
 		navnh.getChildren().addAll(navnLabel, navnText);
 		HBox nameh = new HBox();
@@ -106,12 +128,10 @@ public class ChangeSeries {
 		HBox noteh = new HBox();
 		noteh.getChildren().addAll(noteLabel, noteText);
 		VBox knapperv = new VBox();
-		knapperv.getChildren().addAll(tilfojknap, tilbageknap);
+		knapperv.getChildren().addAll(tilfojknap, sletknap, tilbageknap);
 		VBox vbox = new VBox();
-		vbox.getChildren().addAll(sogh, refh, navnh, nameh, seasonh, aarstalh, audioh, subh, noteh);
-
-		TableColumn<DomainClassSeries, String> ref = new TableColumn<DomainClassSeries, String>("Ref.Nr");
-		ref.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("refs"));
+		vbox.getChildren().addAll(sogh, navnh, nameh, seasonh, aarstalh, audioh, subh, noteh);
+		// Table
 		TableColumn<DomainClassSeries, String> navn = new TableColumn<DomainClassSeries, String>("Dansk Titel");
 		navn.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("navn"));
 		TableColumn<DomainClassSeries, String> name = new TableColumn<DomainClassSeries, String>("Engelsk Titel");
@@ -126,6 +146,7 @@ public class ChangeSeries {
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("sub"));
 		TableColumn<DomainClassSeries, String> note = new TableColumn<DomainClassSeries, String>("Note");
 		note.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("note"));
+
 		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.194));
 		name.prefWidthProperty().bind(table.widthProperty().multiply(0.194));
 		season.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
@@ -133,7 +154,21 @@ public class ChangeSeries {
 		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.154));
 		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.154));
 		note.prefWidthProperty().bind(table.widthProperty().multiply(0.15));
-		table.getColumns().addAll(ref, navn, name, season, arstal, audio, sub, note);
+		table.getColumns().addAll(navn, name, season, arstal, audio, sub, note);
+
+		table.setRowFactory(e -> {
+			TableRow<DomainClassSeries> row = new TableRow<>();
+			row.setOnMouseClicked(e2 -> {
+				reftext.setText(row.getItem().getRefs() + "");
+				navnText.setText(row.getItem().getNavn());
+				nameText.setText(row.getItem().getName());
+				aarstalText.setText(row.getItem().getAarstal());
+				audioText.setText(row.getItem().getAudio());
+				subText.setText(row.getItem().getSub());
+				noteText.setText(row.getItem().getNote());
+			});
+			return row;
+		});
 
 		border.setLeft(vbox);
 		border.setBottom(table);
