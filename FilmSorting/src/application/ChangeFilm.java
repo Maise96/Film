@@ -83,6 +83,9 @@ public class ChangeFilm {
 			audioTextField.clear();
 			subTextField.clear();
 			noteTextField.clear();
+			ChangeFilm menuFilm = new ChangeFilm();
+			menuFilm.start(new Stage());
+			aendreFilm.close();
 		});
 
 		Button sletknap = new Button("Slet en Film");
