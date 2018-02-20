@@ -82,7 +82,7 @@ public class InsertFilm {
 		border.setBottom(indsetKnapperHBox);
 
 		Scene scene = new Scene(border, 1000, 650);
-		scene.getStylesheets().add(Main.class.getResource("insertfilm.css").toExternalForm());
+		scene.getStylesheets().add(Main.class.getResource("insertFilm.css").toExternalForm());
 		insertFilm.setScene(scene);
 		insertFilm.show();
 	}
