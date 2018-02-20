@@ -38,6 +38,11 @@
 	-fx-min-height: 60.0;
 	-fx-max-height: 80;
 }
+#sogTextField:focused{
+	-fx-background-color: #0040a8;
+	-fx-background-radius: 10;
+	-fx-text-fill: #ffffff;
+}
 /* Table Viewet */
 .table-view .column-header-background .label{
 	-fx-font-family:'Segoe Script';

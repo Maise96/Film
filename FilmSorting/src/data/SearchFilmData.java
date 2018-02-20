@@ -26,8 +26,8 @@ public class SearchFilmData {
 
 	public List<DomainClassFilm> sogFilmListe(DataAccess dataAccess, List<DomainClassFilm> list, String sogeord) {
 
-		try (PreparedStatement statement = dataAccess.getConnection().prepareStatement(
-				"SELECT * FROM film WHERE upper(navn) LIKE ? OR upper(name) LIKE ?")) {
+		try (PreparedStatement statement = dataAccess.getConnection()
+				.prepareStatement("SELECT * FROM film WHERE upper(navn) LIKE ? OR upper(name) LIKE ?")) {
 
 			statement.setString(1, "%" + sogeord.toUpperCase() + "%");
 			statement.setString(2, "%" + sogeord.toUpperCase() + "%");

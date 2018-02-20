@@ -80,13 +80,17 @@ public class SearchFilm {
 		audio.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("audio"));
 		TableColumn<DomainClassFilm, String> sub = new TableColumn<DomainClassFilm, String>("Undertekster");
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("sub"));
+		TableColumn<DomainClassFilm, String> note = new TableColumn<DomainClassFilm, String>("Note");
+		note.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("note"));
+		
 
 		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
 		name.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
 		aarstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
-		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
-		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.274));
-		table.getColumns().addAll(aarstal, navn, name, audio, sub);
+		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.249));
+		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.249));
+		note.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
+		table.getColumns().addAll(aarstal, navn, name, audio, sub, note);
 
 		border.setBottom(table);
 		border.setTop(vboxknapper);
