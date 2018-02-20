@@ -24,13 +24,15 @@ public class FilmSortImpl implements FilmSortInterface {
 		tf.opretEnFilm(domain);
 		return domain;
 	}
+
 	@Override
-	public DomainClassFilm redigerFilm(DomainClassFilm domainClassFilm){
+	public DomainClassFilm redigerFilm(DomainClassFilm domainClassFilm) {
 		rf.redigerEnFilm(domainClassFilm);
 		return domainClassFilm;
 	}
+
 	@Override
-	public DomainClassFilm sletFilm(DomainClassFilm domain){
+	public DomainClassFilm sletFilm(DomainClassFilm domain) {
 		df.sletFilm(domain);
 		return domain;
 	}
