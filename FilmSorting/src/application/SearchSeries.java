@@ -72,14 +72,17 @@ public class SearchSeries {
 		audio.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("audio"));
 		TableColumn<DomainClassSeries, String> sub = new TableColumn<DomainClassSeries, String>("Undertekster");
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("sub"));
-
-		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.22));
-		name.prefWidthProperty().bind(table.widthProperty().multiply(0.22));
+		TableColumn<DomainClassSeries, String> note = new TableColumn<DomainClassSeries, String>("Note");
+		note.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("note"));
+		
+		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
+		name.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
 		aarstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
 		season.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
-		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.229));
-		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.229));
-		table.getColumns().addAll(season, navn, name, aarstal, audio, sub);
+		audio.prefWidthProperty().bind(table.widthProperty().multiply(0.199));
+		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.199));
+		note.prefWidthProperty().bind(table.widthProperty().multiply(0.1));
+		table.getColumns().addAll(season, navn, name, aarstal, audio, sub, note);
 
 		border.setBottom(table);
 		border.setTop(knapperhbox);

@@ -38,6 +38,9 @@
 	-fx-min-height: 60.0;
 	-fx-max-height: 90;
 }
+.text-field:focused{
+	-fx-background-color: #f9ff91;
+}
 /* Table Viewet */
 .table-view .column-header-background .label{
 	-fx-font-family:'Segoe Script';
