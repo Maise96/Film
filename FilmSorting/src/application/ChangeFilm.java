@@ -142,7 +142,7 @@ public class ChangeFilm {
 		
 		table.setRowFactory(e->{
 			TableRow<DomainClassFilm> row = new TableRow<>();
-			row.setOnMouseClicked(event -> {
+			row.setOnMouseClicked(e2 -> {
 				reftext.setText(row.getItem().getRef()+"");
 				navnTextField.setText(row.getItem().getNavn());
 				nameTextField.setText(row.getItem().getName());
