@@ -31,10 +31,16 @@ public class SearchFilm {
 		sogFilm.setResizable(false);
 		BorderPane border = new BorderPane();
 
+		// Gør at tablet bliver vist fra start
+		FilmSortImpl logicSog = new FilmSortImpl();
+		filmliste = logicSog.sogFilmListe("");
+		observableListSogFilm = FXCollections.observableArrayList(filmliste);
+		table.setItems(observableListSogFilm);
+
+		// Textfelt
 		Label sogLabel = new Label("Søg på den Danske \n eller den Engelske titel.");
 		sogLabel.setId("sogLabel");
 		TextField sogTextField = new TextField();
-		sogTextField.setId("sogTextField");
 		sogTextField.setOnKeyReleased(e -> {
 			String sogeord = sogTextField.getText();
 			FilmSortImpl logicSoge = new FilmSortImpl();
@@ -43,13 +49,7 @@ public class SearchFilm {
 			table.setItems(observableListSogFilm);
 			sogFilm.show();
 		});
-
-		// Gør at tablet bliver vist fra start
-		FilmSortImpl logicSog = new FilmSortImpl();
-		filmliste = logicSog.sogFilmListe("");
-		observableListSogFilm = FXCollections.observableArrayList(filmliste);
-		table.setItems(observableListSogFilm);
-
+		// Knapper
 		Button hvormange = new Button("Hvor mange film er der i alt?");
 		hvormange.setOnAction(e -> {
 			FilmSortImpl logicSoge = new FilmSortImpl();
@@ -82,7 +82,6 @@ public class SearchFilm {
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("sub"));
 		TableColumn<DomainClassFilm, String> note = new TableColumn<DomainClassFilm, String>("Note");
 		note.setCellValueFactory(new PropertyValueFactory<DomainClassFilm, String>("note"));
-		
 
 		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
 		name.prefWidthProperty().bind(table.widthProperty().multiply(0.2));

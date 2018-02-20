@@ -17,15 +17,16 @@
 .button:pressed{
 	-fx-background-color: #0040a8;
 }
+
 #sogLabel{
-	-fx-background-color: transparent;
-	-fx-background-radius: 10;
-	-fx-min-width: 352;
 	-fx-text-fill: #01114c;
 	-fx-font-family: 'Vladimir Script';
 	-fx-font-size: 40.0;
+	-fx-background-radius: 10;
+	-fx-min-width: 352;
+	-fx-background-color: transparent;
 }
-#sogTextField{
+.text-field{
 	-fx-background-color: transparent;
 	-fx-background-radius: 10;
 	-fx-border-color: #0040a8;
@@ -38,7 +39,7 @@
 	-fx-min-height: 60.0;
 	-fx-max-height: 80;
 }
-#sogTextField:focused{
+.text-field:focused{
 	-fx-background-color: #0040a8;
 	-fx-background-radius: 10;
 	-fx-text-fill: #ffffff;
