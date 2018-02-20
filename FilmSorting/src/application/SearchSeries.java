@@ -2,10 +2,11 @@ package application;
 
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import domain.DomainClassSeries;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import logic.SeriesSortImpl;
 
@@ -45,21 +47,24 @@ public class SearchSeries {
 			table.setItems(observableListSogSerie);
 			searchSeries.show();
 		});
-
+		// Knapper
+		Button hvormangeknap = new Button("Hvor mange sæsoner er der i alt?");
+		hvormangeknap.setOnAction(e -> {
+			SeriesSortImpl logicSoge = new SeriesSortImpl();
+			serieliste = logicSoge.sogSeriesListe("");
+			JOptionPane.showMessageDialog(null, serieliste.size());
+		});
 		Button tilbageknap = new Button("Tilbage");
 		tilbageknap.setOnAction(e -> {
 			MenuSeries menuSeries = new MenuSeries();
 			menuSeries.start(new Stage());
 			searchSeries.close();
 		});
-
 		HBox vbox = new HBox();
-		vbox.getChildren().addAll(sogTextField, tilbageknap);
-		HBox knapperhbox = new HBox();
-		knapperhbox.setSpacing(9);
-		knapperhbox.setAlignment(Pos.BOTTOM_LEFT);
-		knapperhbox.getChildren().addAll(sogLabel, vbox);
-
+		vbox.getChildren().addAll(sogLabel, sogTextField);
+		VBox vbox2 = new VBox();
+		vbox2.getChildren().addAll(hvormangeknap, tilbageknap);
+		// Table
 		TableColumn<DomainClassSeries, String> navn = new TableColumn<DomainClassSeries, String>("Dansk Titel");
 		navn.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("navn"));
 		TableColumn<DomainClassSeries, String> name = new TableColumn<DomainClassSeries, String>("Engelsk Titel");
@@ -74,7 +79,7 @@ public class SearchSeries {
 		sub.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("sub"));
 		TableColumn<DomainClassSeries, String> note = new TableColumn<DomainClassSeries, String>("Note");
 		note.setCellValueFactory(new PropertyValueFactory<DomainClassSeries, String>("note"));
-		
+
 		navn.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
 		name.prefWidthProperty().bind(table.widthProperty().multiply(0.2));
 		aarstal.prefWidthProperty().bind(table.widthProperty().multiply(0.05));
@@ -83,10 +88,11 @@ public class SearchSeries {
 		sub.prefWidthProperty().bind(table.widthProperty().multiply(0.199));
 		note.prefWidthProperty().bind(table.widthProperty().multiply(0.1));
 		table.getColumns().addAll(season, navn, name, aarstal, audio, sub, note);
-
+		
+		// Placering af ting
 		border.setBottom(table);
-		border.setTop(knapperhbox);
-
+		border.setLeft(vbox);
+		border.setRight(vbox2);
 		Scene scene = new Scene(border, 1200, 680);
 		scene.getStylesheets().add(Main.class.getResource("searchSeries.css").toExternalForm());
 		searchSeries.setScene(scene);

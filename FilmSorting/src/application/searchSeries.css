@@ -11,8 +11,9 @@
 	-fx-font-size: 40.0;
 	-fx-font-family: 'Vladimir Script';
 	-fx-min-height: 60.0;
-	-fx-max-height: 90;
+	-fx-max-height: 200;
 	-fx-min-width: 400.0;
+	-fx-max-width: 500;
 	-fx-text-fill: #726b00;
 }
 .button:pressed{
