@@ -1,4 +1,4 @@
-/*Search Serie klassen */
+/*Delete Film klassen */
 .root{
 	-fx-background-color: #a00053;
 }
@@ -79,10 +79,4 @@
     -fx-background-color: #ff6db8;
     -fx-background-insets: 0;
     -fx-background-radius: 5;
-}
-#sikkerlabel{
-	-fx-text-fill: #ffffff;
-	-fx-font-family: 'Vladimir Script';
-	-fx-font-size: 50.0;
-	-fx-min-width: 500;
 }
