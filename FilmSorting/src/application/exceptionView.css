@@ -1,0 +1,20 @@
+/*Exception View klassen */
+.root{
+	-fx-background-color: #ffffff;
+}
+.button {
+	-fx-background-color: #a30000;
+	-fx-background-radius: 10;
+	-fx-border-color: #000;
+	-fx-border-radius: 10px;
+	-fx-font-size: 25.0;
+	-fx-font-family: 'Times New Roman';
+	-fx-min-height: 100.0;
+	-fx-max-height: 150;
+	-fx-min-width: 356.0;
+	-fx-max-width: 400;
+	-fx-text-fill: #ffe7c1;
+}
+.button:pressed{
+	-fx-background-color: #210a0a;
+}
