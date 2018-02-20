@@ -62,6 +62,9 @@ public class InsertSeries {
 				noteTekstfelt.clear();
 			} catch (Exception e1) {
 				e1.printStackTrace();
+				ExceptionView view = new ExceptionView();
+				view.start(new Stage());
+				seasonTekstfelt.clear();
 			}
 		});
 		Button indsetTilbageKnap = new Button("Tilbage");

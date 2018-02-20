@@ -20,8 +20,8 @@ public class InsertDataSeries {
 	}
 
 	public DomainClassSeries tilfojEnSerie(DataAccess dataAccess, DomainClassSeries domainClassSerie) {
-		try (PreparedStatement statement = dataAccess.getConnection()
-				.prepareStatement("INSERT INTO serie (navn, name, season, aarstal, audio, sub, note) VALUES (?, ?, ?, ?, ?, ?, ?)")) {
+		try (PreparedStatement statement = dataAccess.getConnection().prepareStatement(
+				"INSERT INTO serie (navn, name, season, aarstal, audio, sub, note) VALUES (?, ?, ?, ?, ?, ?, ?)")) {
 			statement.setString(1, domainClassSerie.getNavn());
 			statement.setString(2, domainClassSerie.getName());
 			statement.setInt(3, domainClassSerie.getSeason());
