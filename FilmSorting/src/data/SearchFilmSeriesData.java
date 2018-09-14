@@ -11,11 +11,25 @@ import domain.DomainClassSeries;
 
 public class SearchFilmSeriesData {
 
-	public List<DomainClassFilm> sogFilmListe(String sogeord) {
+	public List<DomainClassFilm> sogFilmListe(String sogeordfilm) {
 		List<DomainClassFilm> list = new ArrayList<>();
 		try (DataAccess access = new DataAccess()) {
 			try {
-				sogFilmListe(access, list, sogeord);
+				sogFilmListe(access, list, sogeordfilm);
+				access.commit();
+			} catch (Exception e) {
+				access.rollback();
+				throw e;
+			}
+		}
+		return list;
+	}
+
+	public List<DomainClassSeries> sogSeriesListe(String sogeordserie) {
+		List<DomainClassSeries> list = new ArrayList<>();
+		try (DataAccess access = new DataAccess()) {
+			try {
+				sogSerieListe(access, list, sogeordserie);
 				access.commit();
 			} catch (Exception e) {
 				access.rollback();
@@ -29,7 +43,7 @@ public class SearchFilmSeriesData {
 			String sogeordFilm) {
 
 		try (PreparedStatement statement = dataAccessFilm.getConnection()
-				.prepareStatement("SELECT * FROM film WHERE upper(navn) LIKE ? OR upper(name) LIKE ?")) {
+				.prepareStatement("SELECT * FROM film WHERE upper(navnf) LIKE ? OR upper(namef) LIKE ?")) {
 
 			statement.setString(1, "%" + sogeordFilm.toUpperCase() + "%");
 			statement.setString(2, "%" + sogeordFilm.toUpperCase() + "%");
@@ -38,14 +52,19 @@ public class SearchFilmSeriesData {
 
 				while (resultset.next()) {
 					DomainClassFilm sogFilm = new DomainClassFilm();
-					sogFilm.setRef(resultset.getInt("ref"));
-					sogFilm.setNavn(resultset.getString("navn"));
-					sogFilm.setName(resultset.getString("name"));
-					sogFilm.setAarstal(resultset.getString("aarstal"));
-					sogFilm.setAudio(resultset.getString("audio"));
-					sogFilm.setSub(resultset.getString("sub"));
-					sogFilm.setNote(resultset.getString("note"));
+					sogFilm.setReff(resultset.getInt("reff"));
+					sogFilm.setNavnf(resultset.getString("navnf"));
+					sogFilm.setNamef(resultset.getString("namef"));
+					sogFilm.setAudiof(resultset.getString("audiof"));
+					sogFilm.setSubf(resultset.getString("subf"));
+					sogFilm.setBlurayf(resultset.getBoolean("blurayf"));
+					sogFilm.setYearf(resultset.getString("yearf"));
 					sogFilm.setBurned(resultset.getBoolean("burned"));
+					sogFilm.setKids(resultset.getBoolean("kidsf"));
+					sogFilm.setAnimation(resultset.getBoolean("animation"));
+					sogFilm.setDanish(resultset.getBoolean("danish"));
+					sogFilm.setHorror(resultset.getBoolean("horror"));
+					sogFilm.setNotef(resultset.getString("notef"));
 					listFilm.add(sogFilm);
 				}
 			}
@@ -59,7 +78,7 @@ public class SearchFilmSeriesData {
 			String sogeordSerie) {
 
 		try (PreparedStatement statement = dataAccessSerie.getConnection()
-				.prepareStatement("SELECT * FROM serie WHERE upper(navn) LIKE ? OR upper(name) LIKE ?")) {
+				.prepareStatement("SELECT * FROM serie WHERE upper(navns) LIKE ? OR upper(names) LIKE ?")) {
 
 			statement.setString(1, "%" + sogeordSerie.toUpperCase() + "%");
 			statement.setString(2, "%" + sogeordSerie.toUpperCase() + "%");
@@ -68,13 +87,18 @@ public class SearchFilmSeriesData {
 				while (resultset.next()) {
 					DomainClassSeries sogSerie = new DomainClassSeries();
 					sogSerie.setRefs(resultset.getInt("refs"));
-					sogSerie.setNavn(resultset.getString("navn"));
-					sogSerie.setName(resultset.getString("name"));
+					sogSerie.setNavns(resultset.getString("navns"));
+					sogSerie.setNames(resultset.getString("names"));
+					sogSerie.setCs(resultset.getInt("cs"));
 					sogSerie.setSeason(resultset.getInt("season"));
-					sogSerie.setAarstal(resultset.getString("aarstal"));
-					sogSerie.setAudio(resultset.getString("audio"));
-					sogSerie.setSub(resultset.getString("sub"));
-					sogSerie.setNote(resultset.getString("note"));
+					sogSerie.setNumber(resultset.getInt("number"));
+					sogSerie.setEpisode(resultset.getInt("episode"));
+					sogSerie.setVolume(resultset.getInt("volume"));
+					sogSerie.setBlurays(resultset.getBoolean("blurays"));
+					sogSerie.setAudios(resultset.getString("audios"));
+					sogSerie.setSubs(resultset.getString("subs"));
+					sogSerie.setYears(resultset.getString("years"));
+					sogSerie.setNotes(resultset.getString("notes"));
 					listSerie.add(sogSerie);
 				}
 			}

@@ -2,76 +2,122 @@ package domain;
 
 public class DomainClassFilm {
 
-	private int ref;
-	private String navn;
-	private String name;
-	private String aarstal;
-	private String audio;
-	private String sub;
-	private String note;
+	private int reff;
+	private String navnf;
+	private String namef;
+	private String audiof;
+	private String subf;
+	private boolean blurayf;
+	private String yearf;
 	private boolean burned;
+	private boolean kids;
+	private boolean animation;
+	private boolean danish;
+	private boolean horror;
+	private String notef;
 
-	public int getRef() {
-		return ref;
+	public int getReff() {
+		return reff;
 	}
 
-	public void setRef(int ref) {
-		this.ref = ref;
+	public void setReff(int reff) {
+		this.reff = reff;
 	}
 
-	public String getNavn() {
-		return navn;
+	public String getNavnf() {
+		return navnf;
 	}
 
-	public void setNavn(String navn) {
-		this.navn = navn;
+	public void setNavnf(String navnf) {
+		this.navnf = navnf;
 	}
 
-	public String getName() {
-		return name;
+	public String getNamef() {
+		return namef;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNamef(String namef) {
+		this.namef = namef;
 	}
 
-	public String getAarstal() {
-		return aarstal;
+	public String getAudiof() {
+		return audiof;
 	}
 
-	public void setAarstal(String aarstal) {
-		this.aarstal = aarstal;
+	public void setAudiof(String audiof) {
+		this.audiof = audiof;
 	}
 
-	public String getAudio() {
-		return audio;
+	public String getSubf() {
+		return subf;
 	}
 
-	public void setAudio(String audio) {
-		this.audio = audio;
+	public void setSubf(String subf) {
+		this.subf = subf;
 	}
 
-	public String getSub() {
-		return sub;
+	public boolean isBlurayf() {
+		return blurayf;
 	}
 
-	public void setSub(String sub) {
-		this.sub = sub;
+	public void setBlurayf(boolean blurayf) {
+		this.blurayf = blurayf;
 	}
 
-	public String getNote() {
-		return note;
+	public String getYearf() {
+		return yearf;
 	}
 
-	public void setNote(String note) {
-		this.note = note;
+	public void setYearf(String yearf) {
+		this.yearf = yearf;
 	}
 
-	public boolean getBurned() {
+	public boolean isBurned() {
 		return burned;
 	}
 
 	public void setBurned(boolean burned) {
 		this.burned = burned;
 	}
+
+	public boolean isKids() {
+		return kids;
+	}
+
+	public void setKids(boolean kids) {
+		this.kids = kids;
+	}
+
+	public boolean isAnimation() {
+		return animation;
+	}
+
+	public void setAnimation(boolean animation) {
+		this.animation = animation;
+	}
+
+	public boolean isDanish() {
+		return danish;
+	}
+
+	public void setDanish(boolean danish) {
+		this.danish = danish;
+	}
+
+	public boolean isHorror() {
+		return horror;
+	}
+
+	public void setHorror(boolean horror) {
+		this.horror = horror;
+	}
+
+	public String getNotef() {
+		return notef;
+	}
+
+	public void setNotef(String notef) {
+		this.notef = notef;
+	}
+
 }
