@@ -9,6 +9,7 @@ public class DomainClassFilm {
 	private String audio;
 	private String sub;
 	private String note;
+	private boolean burned;
 
 	public int getRef() {
 		return ref;
@@ -64,5 +65,13 @@ public class DomainClassFilm {
 
 	public void setNote(String note) {
 		this.note = note;
+	}
+
+	public boolean getBurned() {
+		return burned;
+	}
+
+	public void setBurned(boolean burned) {
+		this.burned = burned;
 	}
 }

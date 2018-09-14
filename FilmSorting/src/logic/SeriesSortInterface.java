@@ -10,4 +10,6 @@ public interface SeriesSortInterface {
 	DomainClassSeries tilfojEnSerie(DomainClassSeries domain);
 
 	DomainClassSeries redigerSerie(DomainClassSeries domain);
+
+	DomainClassSeries sletSerie(DomainClassSeries domain);
 }

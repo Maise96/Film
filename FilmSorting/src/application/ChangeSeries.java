@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import domain.DomainClassFilm;
 import domain.DomainClassSeries;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -64,10 +63,9 @@ public class ChangeSeries {
 			table.setItems(observableListSogSerie);
 		});
 
-		// Tilføj knappen
+		// Knapper
 		Button tilfojknap = new Button("Tilføj Ændringer");
 		tilfojknap.setOnAction(e -> {
-			try {
 				SeriesSortInterface ssi = new SeriesSortImpl();
 				DomainClassSeries domain = new DomainClassSeries();
 				domain.setRefs(Integer.parseInt(reftext.getText()));
@@ -89,17 +87,12 @@ public class ChangeSeries {
 				ChangeSeries change = new ChangeSeries();
 				change.start(new Stage());
 				aendreSerie.close();
-			} catch (Exception e1) {
-				ExceptionView view = new ExceptionView();
-				view.start(new Stage());
-				seasonText.clear();
-			}
 		});
 
 		Button sletknap = new Button("Slet en Serie");
 		sletknap.setOnAction(e -> {
-			// DeleteSeries deleteserie = new DeleteSeries();
-			// deleteserie.start(new Stage());
+			 DeleteSeries deleteserie = new DeleteSeries();
+			 deleteserie.start(new Stage());
 			aendreSerie.close();
 		});
 

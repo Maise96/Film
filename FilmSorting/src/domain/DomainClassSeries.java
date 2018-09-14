@@ -8,6 +8,7 @@ public class DomainClassSeries {
 	private int season;
 	private String audio;
 	private String sub;
+	private boolean burned;
 	private String note;
 
 	public int getRefs() {
