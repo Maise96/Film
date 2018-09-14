@@ -35,15 +35,21 @@ public class SearchFilmData {
 			try (ResultSet resultset = statement.executeQuery();) {
 
 				while (resultset.next()) {
-					DomainClassFilm sog = new DomainClassFilm();
-					sog.setRef(resultset.getInt("ref"));
-					sog.setNavn(resultset.getString("navn"));
-					sog.setName(resultset.getString("name"));
-					sog.setAarstal(resultset.getString("aarstal"));
-					sog.setAudio(resultset.getString("audio"));
-					sog.setSub(resultset.getString("sub"));
-					sog.setNote(resultset.getString("note"));
-					list.add(sog);
+					DomainClassFilm sogFilm = new DomainClassFilm();
+					sogFilm.setReff(resultset.getInt("reff"));
+					sogFilm.setNavnf(resultset.getString("navnf"));
+					sogFilm.setNamef(resultset.getString("namef"));
+					sogFilm.setAudiof(resultset.getString("audiof"));
+					sogFilm.setSubf(resultset.getString("subf"));
+					sogFilm.setBlurayf(resultset.getBoolean("blurayf"));
+					sogFilm.setYearf(resultset.getString("yearf"));
+					sogFilm.setBurned(resultset.getBoolean("burned"));
+					sogFilm.setKids(resultset.getBoolean("kidsf"));
+					sogFilm.setAnimation(resultset.getBoolean("animation"));
+					sogFilm.setDanish(resultset.getBoolean("danish"));
+					sogFilm.setHorror(resultset.getBoolean("horror"));
+					sogFilm.setNotef(resultset.getString("notef"));
+					list.add(sogFilm);
 				}
 			}
 		} catch (SQLException e) {

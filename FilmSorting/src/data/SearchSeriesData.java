@@ -34,16 +34,21 @@ public class SearchSeriesData {
 			try (ResultSet resultset = statement.executeQuery();) {
 
 				while (resultset.next()) {
-					DomainClassSeries sog = new DomainClassSeries();
-					sog.setRefs(resultset.getInt("refs"));
-					sog.setNavn(resultset.getString("navn"));
-					sog.setName(resultset.getString("name"));
-					sog.setSeason(resultset.getInt("season"));
-					sog.setAarstal(resultset.getString("aarstal"));
-					sog.setAudio(resultset.getString("audio"));
-					sog.setSub(resultset.getString("sub"));
-					sog.setNote(resultset.getString("note"));
-					list.add(sog);
+					DomainClassSeries sogSerie = new DomainClassSeries();
+					sogSerie.setRefs(resultset.getInt("refs"));
+					sogSerie.setNavns(resultset.getString("navns"));
+					sogSerie.setNames(resultset.getString("names"));
+					sogSerie.setCs(resultset.getInt("cs"));
+					sogSerie.setSeason(resultset.getInt("season"));
+					sogSerie.setNumber(resultset.getInt("number"));
+					sogSerie.setEpisode(resultset.getInt("episode"));
+					sogSerie.setVolume(resultset.getInt("volume"));
+					sogSerie.setBlurays(resultset.getBoolean("blurays"));
+					sogSerie.setAudios(resultset.getString("audios"));
+					sogSerie.setSubs(resultset.getString("subs"));
+					sogSerie.setYears(resultset.getString("years"));
+					sogSerie.setNotes(resultset.getString("notes"));
+					list.add(sogSerie);
 				}
 			}
 		} catch (SQLException e) {
