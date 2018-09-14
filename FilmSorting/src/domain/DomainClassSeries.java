@@ -2,14 +2,18 @@ package domain;
 
 public class DomainClassSeries {
 	private int refs;
-	private String navn;
-	private String name;
-	private String aarstal;
+	private String navns;
+	private String names;
+	private int cs;
 	private int season;
-	private String audio;
-	private String sub;
-	private boolean burned;
-	private String note;
+	private int number;
+	private int episode;
+	private int volume;
+	private boolean blurays;
+	private String audios;
+	private String subs;
+	private String years;
+	private String notes;
 
 	public int getRefs() {
 		return refs;
@@ -19,28 +23,28 @@ public class DomainClassSeries {
 		this.refs = refs;
 	}
 
-	public String getNavn() {
-		return navn;
+	public String getNavns() {
+		return navns;
 	}
 
-	public void setNavn(String navn) {
-		this.navn = navn;
+	public void setNavns(String navns) {
+		this.navns = navns;
 	}
 
-	public String getName() {
-		return name;
+	public String getNames() {
+		return names;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNames(String names) {
+		this.names = names;
 	}
 
-	public String getAarstal() {
-		return aarstal;
+	public int getCs() {
+		return cs;
 	}
 
-	public void setAarstal(String aarstal) {
-		this.aarstal = aarstal;
+	public void setCs(int cs) {
+		this.cs = cs;
 	}
 
 	public int getSeason() {
@@ -51,27 +55,67 @@ public class DomainClassSeries {
 		this.season = season;
 	}
 
-	public String getAudio() {
-		return audio;
+	public int getNumber() {
+		return number;
 	}
 
-	public void setAudio(String audio) {
-		this.audio = audio;
+	public void setNumber(int number) {
+		this.number = number;
 	}
 
-	public String getSub() {
-		return sub;
+	public int getEpisode() {
+		return episode;
 	}
 
-	public void setSub(String sub) {
-		this.sub = sub;
+	public void setEpisode(int episode) {
+		this.episode = episode;
 	}
 
-	public String getNote() {
-		return note;
+	public int getVolume() {
+		return volume;
 	}
 
-	public void setNote(String note) {
-		this.note = note;
+	public void setVolume(int volume) {
+		this.volume = volume;
+	}
+
+	public boolean isBlurays() {
+		return blurays;
+	}
+
+	public void setBlurays(boolean blurays) {
+		this.blurays = blurays;
+	}
+
+	public String getAudios() {
+		return audios;
+	}
+
+	public void setAudios(String audios) {
+		this.audios = audios;
+	}
+
+	public String getSubs() {
+		return subs;
+	}
+
+	public void setSubs(String subs) {
+		this.subs = subs;
+	}
+
+	public String getYears() {
+		return years;
+	}
+
+	public void setYears(String years) {
+		this.years = years;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
 	}
 }
