@@ -10,26 +10,27 @@ import domain.DomainClassSeries;
 
 public class SearchSeriesData {
 
-	public List<DomainClassSeries> sogSeriesListe(String soog) {
-		List<DomainClassSeries> list = new ArrayList<>();
+	public List<DomainClassSeries> sogSerieListData(String sogSerieListData) {
+		List<DomainClassSeries> serieList = new ArrayList<>();
 		try (DataAccess access = new DataAccess()) {
 			try {
-				sogSeriesListe(access, list, soog);
+				sogSerieListdata(access, serieList, sogSerieListData);
 				access.commit();
 			} catch (Exception e) {
 				access.rollback();
 				throw e;
 			}
 		}
-		return list;
+		return serieList;
 	}
 
-	public List<DomainClassSeries> sogSeriesListe(DataAccess dataAccess, List<DomainClassSeries> list, String soog) {
+	public List<DomainClassSeries> sogSerieListdata(DataAccess dataAccess, List<DomainClassSeries> serieList,
+			String sogSerieListdata) {
 		try (PreparedStatement statement = dataAccess.getConnection()
-				.prepareStatement("SELECT * FROM serie WHERE upper(navn) LIKE ? OR upper(name) LIKE ?");) {
+				.prepareStatement("SELECT * FROM serie WHERE upper(navns) LIKE ? OR upper(names) LIKE ?");) {
 
-			statement.setString(1, "%" + soog.toUpperCase() + "%");
-			statement.setString(2, "%" + soog.toUpperCase() + "%");
+			statement.setString(1, "%" + sogSerieListdata.toUpperCase() + "%");
+			statement.setString(2, "%" + sogSerieListdata.toUpperCase() + "%");
 
 			try (ResultSet resultset = statement.executeQuery();) {
 
@@ -48,12 +49,12 @@ public class SearchSeriesData {
 					sogSerie.setSubs(resultset.getString("subs"));
 					sogSerie.setYears(resultset.getString("years"));
 					sogSerie.setNotes(resultset.getString("notes"));
-					list.add(sogSerie);
+					serieList.add(sogSerie);
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
+		return serieList;
 	}
 }

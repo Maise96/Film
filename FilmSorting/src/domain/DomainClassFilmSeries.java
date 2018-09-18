@@ -8,18 +8,11 @@ public class DomainClassFilmSeries {
 	private String subf, subs;
 	private boolean blurayf, blurays;
 	private String yearf, years;
-	private boolean burned;
-	private boolean kids;
-	private boolean animation;
-	private boolean danish;
-	private boolean horror;
+	private boolean burned, kids, animation, danish, horror;
 	private String notef, notes;
-	private int cs;
-	private int season;
-	private int number;
-	private int episode;
-	private int volume;
-//getters og setters
+	private int cs, season, number, episode, volume;
+
+	// getters og setters
 	public int getReff() {
 		return reff;
 	}

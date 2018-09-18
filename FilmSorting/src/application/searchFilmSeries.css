@@ -1,0 +1,94 @@
+/*Search Film og Serie klassen */
+.root{
+	-fx-background-color: #00fff2;
+}
+.button {
+	-fx-background-color: #0095a5;
+	-fx-background-radius: 10;
+	-fx-border-color: #0040a8;
+	-fx-border-radius: 10px;
+	-fx-font-size: 20.0;
+	-fx-font-family: 'Segoe Script';
+	-fx-min-width: 352.0;
+	-fx-max-width: 352; 
+	-fx-min-height: 60.0;
+	-fx-max-height: 80;
+	-fx-text-fill: #ffe7c1;
+}
+.button:pressed{
+	-fx-background-color: #0040a8;
+}
+
+.text-field{
+	-fx-background-color: transparent;
+	-fx-background-radius: 10;
+	-fx-border-color: #0040a8;
+	-fx-border-radius: 10;
+	-fx-text-fill: #01114c;
+	-fx-font-family:'Segoe Script';
+	-fx-font-size: 30.0;
+	-fx-min-width: 500;
+	-fx-max-width: 600; 
+	-fx-min-height: 60.0;
+	-fx-max-height: 80;
+}
+.text-field:focused{
+	-fx-background-color: #0095a5;
+	-fx-background-radius: 10;
+	-fx-text-fill: #ffffff;
+}
+/* Table Viewet */
+.table-view .column-header-background .label{
+	-fx-font-family:'Segoe Script';
+    -fx-text-fill: white;
+}
+.table-view .column-header {
+    -fx-background-color:#0b245e;
+    -fx-border-color: #ffffff;
+}
+.table-view .table-cell{
+    -fx-text-fill:#000000;
+}
+.table-view .table-cell:odd{
+    -fx-text-fill:#ffffff;
+}
+.table-row-cell{
+	-fx-background-color: -fx-table-cell-border-color, #8af2ed;
+}
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #03b7ae;
+}
+.table-row-cell:selected {
+    -fx-background-color: #0095a5;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+}
+
+/*Labels i pop-up vinduet og Button*/
+#popupLabelDerer {
+	-fx-font-family: 'Segoe Script';
+	-fx-text-fill: #01114c;
+	-fx-font-size: 20;
+}
+#popupLabelmedAntal{
+	-fx-font-family: 'Segoe Script';
+	-fx-text-fill: #01114c;
+	-fx-font-size: 20;
+}
+#popupbuttonClose{
+	-fx-background-color: transparent;
+	-fx-background-radius: 10;
+	-fx-border-color: transparent;
+	-fx-border-radius: 10px;
+	-fx-font-size: 20;
+	-fx-font-family: 'Segoe Script';
+	-fx-min-width: 70;
+	-fx-max-width: 210; 
+	-fx-min-height: 50;
+	-fx-max-height: 60;
+	-fx-text-fill: #000000;
+}
+#popupbuttonClose:pressed{
+	-fx-background-color: #0040a8;
+	-fx-text-fill: #ffffff;
+}

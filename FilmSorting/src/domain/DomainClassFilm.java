@@ -3,18 +3,9 @@ package domain;
 public class DomainClassFilm {
 
 	private int reff;
-	private String navnf;
-	private String namef;
-	private String audiof;
-	private String subf;
-	private boolean blurayf;
-	private String yearf;
-	private boolean burned;
-	private boolean kids;
-	private boolean animation;
-	private boolean danish;
-	private boolean horror;
-	private String notef;
+	private String navnf, namef, audiof, subf;
+	private boolean blurayf, burned, kids, animation, danish, horror;
+	private String yearf, notef;
 
 	public int getReff() {
 		return reff;

@@ -1,19 +1,9 @@
 package domain;
 
 public class DomainClassSeries {
-	private int refs;
-	private String navns;
-	private String names;
-	private int cs;
-	private int season;
-	private int number;
-	private int episode;
-	private int volume;
+	private int refs, cs, season, number, episode, volume;
+	private String navns, names, audios, subs, years, notes;
 	private boolean blurays;
-	private String audios;
-	private String subs;
-	private String years;
-	private String notes;
 
 	public int getRefs() {
 		return refs;

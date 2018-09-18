@@ -10,27 +10,28 @@ import domain.DomainClassFilm;
 
 public class SearchFilmData {
 
-	public List<DomainClassFilm> sogFilmListe(String sogeord) {
-		List<DomainClassFilm> list = new ArrayList<>();
+	public List<DomainClassFilm> sogFilmListData(String sogFilmListData) {
+		List<DomainClassFilm> filmList = new ArrayList<>();
 		try (DataAccess access = new DataAccess()) {
 			try {
-				sogFilmListe(access, list, sogeord);
+				sogFilmListdata(access, filmList, sogFilmListData);
 				access.commit();
 			} catch (Exception e) {
 				access.rollback();
 				throw e;
 			}
 		}
-		return list;
+		return filmList;
 	}
 
-	public List<DomainClassFilm> sogFilmListe(DataAccess dataAccess, List<DomainClassFilm> list, String sogeord) {
+	public List<DomainClassFilm> sogFilmListdata(DataAccess dataAccess, List<DomainClassFilm> filmList,
+			String sogFilmListdata) {
 
 		try (PreparedStatement statement = dataAccess.getConnection()
-				.prepareStatement("SELECT * FROM film WHERE upper(navn) LIKE ? OR upper(name) LIKE ?")) {
+				.prepareStatement("SELECT * FROM film WHERE upper(navnf) LIKE ? OR upper(namef) LIKE ?")) {
 
-			statement.setString(1, "%" + sogeord.toUpperCase() + "%");
-			statement.setString(2, "%" + sogeord.toUpperCase() + "%");
+			statement.setString(1, "%" + sogFilmListdata.toUpperCase() + "%");
+			statement.setString(2, "%" + sogFilmListdata.toUpperCase() + "%");
 
 			try (ResultSet resultset = statement.executeQuery();) {
 
@@ -44,17 +45,17 @@ public class SearchFilmData {
 					sogFilm.setBlurayf(resultset.getBoolean("blurayf"));
 					sogFilm.setYearf(resultset.getString("yearf"));
 					sogFilm.setBurned(resultset.getBoolean("burned"));
-					sogFilm.setKids(resultset.getBoolean("kidsf"));
+					sogFilm.setKids(resultset.getBoolean("kids"));
 					sogFilm.setAnimation(resultset.getBoolean("animation"));
 					sogFilm.setDanish(resultset.getBoolean("danish"));
 					sogFilm.setHorror(resultset.getBoolean("horror"));
 					sogFilm.setNotef(resultset.getString("notef"));
-					list.add(sogFilm);
+					filmList.add(sogFilm);
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
+		return filmList;
 	}
 }
