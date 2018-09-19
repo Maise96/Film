@@ -1,49 +1,53 @@
-/*Search Film klassen */
+/* Search Film klassen */
 .root{
 	-fx-background-image: url(swro.jpg);
 	-fx-background-size: stretch;
 }
 .button {
 	-fx-background-color: #01114c;
-	-fx-background-radius: 10;
+	-fx-background-radius: 10.0;
 	-fx-border-color: #0040a8;
-	-fx-border-radius: 10px;
+	-fx-border-radius: 10.0px;
 	-fx-font-size: 40.0;
 	-fx-font-family: 'Vladimir Script';
-	-fx-min-height: 100.0;
-	-fx-min-width: 300.0;
+	-fx-min-width: 352.0;
+	-fx-min-height: 60.0;
+	-fx-max-width: 352.0; 
+	-fx-max-height: 80.0;
 	-fx-text-fill: #ffe7c1;
 }
 .button:pressed{
 	-fx-background-color: #0040a8;
 }
-
-#sogLabel{
-	-fx-text-fill: #01114c;
-	-fx-font-family: 'Vladimir Script';
-	-fx-font-size: 40.0;
-	-fx-background-radius: 10;
-	-fx-min-width: 352;
-	-fx-background-color: transparent;
-}
 .text-field{
 	-fx-background-color: transparent;
-	-fx-background-radius: 10;
+	-fx-background-radius: 10.0;
 	-fx-border-color: #0040a8;
-	-fx-border-radius: 10;
+	-fx-border-radius: 10.0;
 	-fx-text-fill: #01114c;
 	-fx-font-family:'Segoe Script';
 	-fx-font-size: 30.0;
 	-fx-min-width: 352.0;
-	-fx-max-width: 352; 
+	-fx-max-width: 352.0; 
 	-fx-min-height: 60.0;
-	-fx-max-height: 80;
+	-fx-max-height: 80.0;
 }
 .text-field:focused{
 	-fx-background-color: #0040a8;
-	-fx-background-radius: 10;
+	-fx-background-radius: 10.0;
 	-fx-text-fill: #ffffff;
 }
+#antalfilm{
+	-fx-font-family: 'Segoe Script';
+	-fx-font-size: 26;
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #000050;
+	-fx-min-width: 353;
+	-fx-max-width: 353; 
+	-fx-min-height: 60.0;
+	-fx-max-height: 80.0;
+}
+
 /* Table Viewet */
 .table-view .column-header-background .label{
 	-fx-font-family:'Segoe Script';
@@ -64,6 +68,6 @@
 }
 .table-row-cell:selected {
     -fx-background-color: #0095a5;
-    -fx-background-insets: 0;
-    -fx-background-radius: 5;
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 5.0;
 }
