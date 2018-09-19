@@ -22,7 +22,6 @@ public class SearchFilmSeriesPopup {
 		FilmSortImpl logicSogehvormangefilmderer = new FilmSortImpl();
 		domainfilmliste = logicSogehvormangefilmderer.sogFilmListdata("");
 
-		
 		Label popupLabelDerer = new Label("Der er");
 		popupLabelDerer.setId("popupLabelDerer");
 		Label popupLabelmedAntal = new Label("" + domainfilmliste.size() + " " + "film i alt");
@@ -30,7 +29,7 @@ public class SearchFilmSeriesPopup {
 
 		Button buttonClose = new Button("OK");
 		buttonClose.setId("popupbuttonClose");
-		buttonClose.setOnAction(e->{
+		buttonClose.setOnAction(e -> {
 			sogFilmSeriePopup.close();
 		});
 
