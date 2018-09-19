@@ -17,8 +17,7 @@ public class SearchFilmSeriesPopup {
 		sogFilmSeriePopup.setTitle("Hvor mange film er der?");
 		sogFilmSeriePopup.setResizable(false);
 		BorderPane border = new BorderPane();
-		// soger efter hvor mange film der er ved at gennemgå logiklagets antal
-		// rækker i db
+		// soger efter hvor mange film der er ved at gennemgå logiklagets antal rækker i db
 		FilmSortImpl logicSogehvormangefilmderer = new FilmSortImpl();
 		domainfilmliste = logicSogehvormangefilmderer.sogFilmListdata("");
 
