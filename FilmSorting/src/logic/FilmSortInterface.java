@@ -1,15 +1,9 @@
 package logic;
 
 import java.util.List;
-
 import domain.DomainClassFilm;
 
 public interface FilmSortInterface {
-	public DomainClassFilm tilfojFilm(DomainClassFilm domain);
-
-	List<DomainClassFilm> sogFilmListe(String sogeord);
-
-	DomainClassFilm redigerFilm(DomainClassFilm domainClassFilm);
-
-	DomainClassFilm sletFilm(DomainClassFilm domain);
+	List<DomainClassFilm> sogFilmListdata(String sogFilmListdata);
+	public DomainClassFilm opretEnFilm(DomainClassFilm domain);
 }

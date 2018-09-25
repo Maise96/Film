@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import domain.DomainClassFilm;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -20,51 +21,104 @@ public class InsertFilm {
 		insertFilm.setTitle("Tilføj en Film");
 		insertFilm.setResizable(false);
 		BorderPane border = new BorderPane();
+		// Oprettelse af Labels og textfields
+		Label labelNavnf = new Label("Tilføj Danske Titel");
+		Label labelNamef = new Label("Tilføj Engelske Titel");
+		Label labelYearf = new Label("Tilføj Udgivelsesår");
+		Label labelBlurayf = new Label("Blu-ray film?");
+		Label labelBurned = new Label("Brændt film?");
+		Label labelKids = new Label("Børnefilm?");
+		Label labelAnimation = new Label("Animationsfilm?");
+		Label labelDanish = new Label("Dansk film?");
+		Label labelHorror = new Label("Gyser film?");
+		Label labelNotef = new Label("Tilføj Note");
+		Label labelAudiof = new Label("Tilføj Audio Sprog");
+		Label labelSubf = new Label("Tilføj Undertekst Sprog");
+		Label audiofTextlabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
+		Label subfTextlabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
+		audiofTextlabel.setId("sprogsublabel");
+		subfTextlabel.setId("subsproglabel");
 
-		Label indsetNavnLabel = new Label("Tilføj Danske Titel");
-		Label indsetNameLabel = new Label("Tilføj Engelske Titel");
-		Label indsetAarstalLabel = new Label("Tilføj Udgivelsesår");
-		Label indsetAudioLabel = new Label("Tilføj Audio Sprog");
-		Label indsetSubLabel = new Label("Tilføj Undertekst Sprog");
-		Label sprogsublabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
-		Label subsproglabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
-		Label indsetNoteLabel = new Label("Tilføj Note");
-		sprogsublabel.setId("sprogsublabel");
-		subsproglabel.setId("subsproglabel");
+		TextField textfieldNavnf = new TextField();
+		TextField textfieldNamef = new TextField();
+		TextField textfieldYearf = new TextField();
+		CheckBox checkboxBluerayf = new CheckBox();
+		CheckBox checkboxBurned = new CheckBox();
+		CheckBox checkboxKids = new CheckBox();
+		CheckBox checkboxAnimation = new CheckBox();
+		CheckBox checkboxDanish = new CheckBox();
+		CheckBox checkboxHorror = new CheckBox();
+		TextField textfieldNotef = new TextField();
+		TextField textfieldAudiof = new TextField();
+		TextField textfieldSubf = new TextField();
+		checkboxBluerayf.setSelected(false);
+		checkboxBluerayf.setAllowIndeterminate(false);
+		checkboxBurned.setSelected(false);
+		checkboxBurned.setAllowIndeterminate(false);
+		checkboxKids.setSelected(false);
+		checkboxKids.setAllowIndeterminate(false);
+		checkboxAnimation.setSelected(false);
+		checkboxAnimation.setAllowIndeterminate(false);
+		checkboxDanish.setSelected(false);
+		checkboxDanish.setAllowIndeterminate(false);
+		checkboxHorror.setSelected(false);
+		checkboxHorror.setAllowIndeterminate(false);
+		
+		VBox labelVBox = new VBox();
+		labelVBox.getChildren().addAll(labelNavnf, labelNamef, labelYearf, labelAudiof, labelSubf, labelBlurayf,
+				labelBurned, labelAnimation, labelKids, labelDanish, labelHorror, labelNotef);
+		labelVBox.setSpacing(10);
+		VBox textfieldVBox = new VBox();
+		textfieldVBox.getChildren().addAll(textfieldNavnf, textfieldNamef, textfieldYearf, textfieldAudiof,
+				textfieldSubf, checkboxBluerayf, checkboxBurned, checkboxAnimation, checkboxKids, checkboxDanish,
+				checkboxHorror, textfieldNotef);
+		textfieldVBox.setSpacing(10);
+		border.setLeft(labelVBox);
+		border.setRight(textfieldVBox);
 
-		TextField indsetNavnTekstfelt = new TextField();
-		TextField indsetNameTekstfelt = new TextField();
-		TextField indsetAarstalTekstfelt = new TextField();
-		TextField indsetAudioTekstfelt = new TextField();
-		TextField indsetSubTekstfelt = new TextField();
-		TextField indsetNoteTekstfelt = new TextField();
-
-		VBox indsetLabelVBox = new VBox();
-		indsetLabelVBox.getChildren().addAll(indsetNavnLabel, indsetNameLabel, indsetAarstalLabel, sprogsublabel,
-				indsetAudioLabel, indsetSubLabel, indsetNoteLabel);
-		indsetLabelVBox.setSpacing(10);
-		VBox indsetTextFieldVBox = new VBox();
-		indsetTextFieldVBox.getChildren().addAll(indsetNavnTekstfelt, indsetNameTekstfelt, indsetAarstalTekstfelt,
-				subsproglabel, indsetAudioTekstfelt, indsetSubTekstfelt, indsetNoteTekstfelt);
-		indsetTextFieldVBox.setSpacing(10);
-		border.setLeft(indsetLabelVBox);
-		border.setRight(indsetTextFieldVBox);
-
-		Button indsetTilfojKnap = new Button("Tilføj");
-		indsetTilfojKnap.setOnAction(e -> {
+		Button tilfojKnap = new Button("Tilføj");
+		tilfojKnap.setOnAction(e -> {
 			try {
 				FilmSortInterface fsi = new FilmSortImpl();
 				DomainClassFilm domain = new DomainClassFilm();
-				domain.setNavn(indsetNavnTekstfelt.getText());
-				domain.setName(indsetNameTekstfelt.getText());
-				domain.setAarstal(indsetAarstalTekstfelt.getText());
-				domain.setAudio(indsetAudioTekstfelt.getText());
-				domain.setSub(indsetSubTekstfelt.getText());
-				domain.setNote(indsetNoteTekstfelt.getText());
-				fsi.tilfojFilm(domain);
-
+				domain.setNavnf(textfieldNavnf.getText());
+				domain.setNamef(textfieldNamef.getText());
+				domain.setYearf(textfieldYearf.getText());
+				domain.setAudiof(textfieldAudiof.getText());
+				domain.setSubf(textfieldSubf.getText());
+				if(checkboxBluerayf.isSelected()){
+					domain.setBlurayf(true);
+				}
+				if(checkboxBurned.isSelected()){
+					domain.setBurned(true);
+				}
+				if(checkboxAnimation.isSelected()){
+					domain.setAnimation(true);
+				}
+				if(checkboxKids.isSelected()){
+					domain.setKids(true);
+				}
+				if(checkboxDanish.isSelected()){
+					domain.setDanish(true);
+				}
+				if(checkboxHorror.isSelected()){
+					domain.setHorror(true);
+				}
+				domain.setNotef(textfieldNotef.getText());
+				fsi.opretEnFilm(domain);
 				JOptionPane.showMessageDialog(null, "Film er tilføjet");
-
+				textfieldNavnf.clear();
+				textfieldNamef.clear();
+				textfieldYearf.clear();
+				textfieldAudiof.clear();
+				textfieldSubf.clear();
+				checkboxBluerayf.setSelected(false);
+				checkboxBurned.setSelected(false);
+				checkboxAnimation.setSelected(false);
+				checkboxKids.setSelected(false);
+				checkboxDanish.setSelected(false);
+				checkboxHorror.setSelected(false);
+				textfieldNotef.clear();
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
@@ -77,11 +131,11 @@ public class InsertFilm {
 		});
 
 		HBox indsetKnapperHBox = new HBox();
-		indsetKnapperHBox.getChildren().addAll(indsetTilfojKnap, indsetTilbageKnap);
+		indsetKnapperHBox.getChildren().addAll(tilfojKnap, indsetTilbageKnap);
 		indsetKnapperHBox.setSpacing(310);
 		border.setBottom(indsetKnapperHBox);
 
-		Scene scene = new Scene(border, 1000, 650);
+		Scene scene = new Scene(border, 1200, 710);
 		scene.getStylesheets().add(Main.class.getResource("insertFilm.css").toExternalForm());
 		insertFilm.setScene(scene);
 		insertFilm.show();
