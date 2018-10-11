@@ -38,7 +38,7 @@ public class InsertFilmData {
 			statement.execute();
 
 		} catch (SQLException e) {
-			throw new RuntimeException("Noget gik galt RuntimeException", e);
+			throw new RuntimeException("Noget gik galt ved oprettelse af filmdatalaget", e);
 		}
 		return domainClassFilm;
 	}

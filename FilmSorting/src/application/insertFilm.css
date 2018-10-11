@@ -10,7 +10,7 @@
 	-fx-border-radius: 10px;
 	-fx-font-size: 40.0;
 	-fx-font-family: 'Vladimir Script';
-	-fx-min-height: 100.0;
+	-fx-min-height: 90.0;
 	-fx-min-width: 350.0;
 	-fx-max-height: 250;
 	-fx-max-width: 500;
@@ -37,8 +37,8 @@
 	-fx-font-size: 30.0;
 	-fx-min-width: 350.0;
 	-fx-max-width: 360;
-	-fx-min-height: 45.0;
-	-fx-max-height: 55;
+	-fx-min-height: 30.0;
+	-fx-max-height: 40;
 }
 .text-field:focused{
 	-fx-background-color: #c199ff;

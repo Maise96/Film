@@ -38,7 +38,6 @@ public class InsertFilm {
 		Label subfTextlabel = new Label("Dansk, Norsk, Svensk, Engelsk, Suomi, Thai, Tysk, Andet");
 		audiofTextlabel.setId("sprogsublabel");
 		subfTextlabel.setId("subsproglabel");
-
 		TextField textfieldNavnf = new TextField();
 		TextField textfieldNamef = new TextField();
 		TextField textfieldYearf = new TextField();
@@ -63,19 +62,37 @@ public class InsertFilm {
 		checkboxDanish.setAllowIndeterminate(false);
 		checkboxHorror.setSelected(false);
 		checkboxHorror.setAllowIndeterminate(false);
+		HBox hboxNavn = new HBox();
+		hboxNavn.getChildren().addAll(labelNavnf, textfieldNavnf);
+		HBox hboxName = new HBox();
+		hboxName.getChildren().addAll(labelNamef, textfieldNamef);
+		HBox hboxYear = new HBox();
+		hboxYear.getChildren().addAll(labelYearf, textfieldYearf);
+		HBox hboxAudio = new HBox();
+		hboxAudio.getChildren().addAll(labelAudiof, textfieldAudiof);
+		HBox hboxSub = new HBox();
+		hboxSub.getChildren().addAll(labelSubf, textfieldSubf);
+		HBox hboxBluray = new HBox();
+		hboxBluray.getChildren().addAll(labelBlurayf, checkboxBluerayf);
+		HBox hboxBurned = new HBox();
+		hboxBurned.getChildren().addAll(labelBurned, checkboxBurned);
+		HBox hboxAnimation = new HBox();
+		hboxAnimation.getChildren().addAll(labelAnimation, checkboxAnimation);
+		HBox hboxKids = new HBox();
+		hboxKids.getChildren().addAll(labelKids, checkboxKids);
+		HBox hboxDanish = new HBox();
+		hboxDanish.getChildren().addAll(labelDanish, checkboxDanish);
+		HBox hboxHorror = new HBox();
+		hboxHorror.getChildren().addAll(labelHorror, checkboxHorror);
+		HBox hboxNote = new HBox();
+		hboxNote.getChildren().addAll(labelNotef, textfieldNotef);
 		
 		VBox labelVBox = new VBox();
-		labelVBox.getChildren().addAll(labelNavnf, labelNamef, labelYearf, labelAudiof, labelSubf, labelBlurayf,
-				labelBurned, labelAnimation, labelKids, labelDanish, labelHorror, labelNotef);
-		labelVBox.setSpacing(10);
-		VBox textfieldVBox = new VBox();
-		textfieldVBox.getChildren().addAll(textfieldNavnf, textfieldNamef, textfieldYearf, textfieldAudiof,
-				textfieldSubf, checkboxBluerayf, checkboxBurned, checkboxAnimation, checkboxKids, checkboxDanish,
-				checkboxHorror, textfieldNotef);
-		textfieldVBox.setSpacing(10);
-		border.setLeft(labelVBox);
-		border.setRight(textfieldVBox);
-
+		labelVBox.getChildren().addAll(hboxNavn, hboxName, hboxYear, hboxAudio, hboxSub, hboxBluray,
+				hboxBurned, hboxAnimation, hboxKids, hboxDanish, hboxHorror, hboxNote);
+		labelVBox.setSpacing(5);
+		border.setCenter(labelVBox);
+		
 		Button tilfojKnap = new Button("Tilføj");
 		tilfojKnap.setOnAction(e -> {
 			try {
@@ -135,7 +152,7 @@ public class InsertFilm {
 		indsetKnapperHBox.setSpacing(310);
 		border.setBottom(indsetKnapperHBox);
 
-		Scene scene = new Scene(border, 1200, 710);
+		Scene scene = new Scene(border, 1200, 730);
 		scene.getStylesheets().add(Main.class.getResource("insertFilm.css").toExternalForm());
 		insertFilm.setScene(scene);
 		insertFilm.show();
